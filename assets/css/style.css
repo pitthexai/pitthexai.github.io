@@ -1011,6 +1011,25 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Awards
+--------------------------------------------------------------*/
+.awards .awards-col-part {
+  text-align: center;
+  justify-content: center;
+}
+
+.awards .awards-img img {
+
+  width: 75%;
+  height: auto;
+  border-radius: 9px;
+}
+
+.awards .awards-txt {
+  color: #444;
+}
+
+/*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials {
@@ -1397,6 +1416,18 @@ section {
 .team .member:hover .social {
   opacity: 1;
   bottom: 15px;
+}
+
+.team-former,
+.team-collaborators {
+  list-style: none;
+
+}
+
+.team-former li,
+.team-collaborators li {
+  padding-top: 5px;
+  line-height: 2;
 }
 
 /*--------------------------------------------------------------
