@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Generative AI in Orthopedics Imaging, Pitt HexAI, Ahmad P. Tafti, University of Pittsburgh">
+  <meta name="keywords"
+    content="Generative AI, Orthopedics Imaging, Ahmad P. Tafti, Pitt HexAI, Few-Shot Learning, Knee Radiographs, University of Pittsburgh">
+  <meta name="author" content="Ahmad P. Tafti">
+  <title>Generative AI in Orthopedics Imaging | Pitt HexAI</title>
+  <link rel="canonical" href="https://pitthexai.github.io/" />
+  <meta property="og:title" content="Generative AI in Orthopedics Imaging | Pitt HexAI" />
+  <meta property="og:description"
+    content="Innovative deep few-shot augmentation pipeline to generate knee radiographs for KL grading.">
+  <meta property="og:image" content="https://pitthexai.github.io/assets/img/research/generative-knee-ai.png" />
+  <meta property="og:url" content="https://pitthexai.github.io/Research-Generative-AI-Orthopedic-Imaging.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:300,400,500,700|Poppins:300,400,500,600,700"
+    rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #24292e;
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .github-btn:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <a href="https://www.pitt.edu" target="_blank" class="text-light">University of Pittsburgh</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-flex-start">
+      <h1 class="logo"><a href="index.html"><img src="assets/img/Pitthexai_logo.png" class="logo" alt="HexAI Logo"></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html"><i class="bx bx-home"></i> Home</a></li>
+          <li><a class="nav-link scrollto" href="people.html"><i class="bi bi-people-fill"></i> Team</a></li>
+          <li><a class="nav-link scrollto" href="events.html"><i class="bx bx-calendar"></i> Events</a></li>
+          <li><a class="nav-link scrollto" href="podcast.html"><i class="bi bi-broadcast-pin"></i>HexAI Podcast</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="research.html"><i class="bx bx-search"></i> Research</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="research.html">Projects</a>
+              <a class="dropdown-item" href="publications.html">Publications</a>
+              <a class="dropdown-item" href="openings.html">Openings</a>
+              <a class="dropdown-item" href="funding.html">Funding</a>
+              <a class="dropdown-item" href="githubrepo.html">GitHub Repositories</a>
+            </div>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" data-aos="fade-up">
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><strong>Projects</strong></h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Projects</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-9 pt-4 pt-lg-0 content d-flex flex-column justify-content-center">
+            <h1>Generative AI for KL Grading: A Few-Shot Image Augmentation Approach</h1>
+            <p>
+              Deep learning in orthopedic medical image analysis has gained momentum in recent years, but progress has been hindered by the lack of large-scale, standardized ground-truth imaging datasets. This study introduces an innovative deep few-shot image augmentation pipeline designed to synthetically generate high-fidelity knee radiographs, specifically aimed at improving downstream tasks such as Kellgren-Lawrence (KL) grading for knee osteoarthritis. Despite limited training data, the proposed method successfully generates realistic plain knee radiographs, which are then used to train a KL grade classifier. Experimental results demonstrate strong performance: the synthetic images achieved average Frechet Inception Distance (FID) scores of 26.33 for KL grading and 22.538 for bilateral knee views. The classifier trained on these images reached a test accuracy of 72.7% and a Cohen’s Kappa score of 0.451. In addition to its technical success, the study contributes a publicly available dataset of 86,000 synthetic knee radiographs, offering valuable resources to the research community. Overall, the proposed pipeline effectively addresses data scarcity in orthopedic AI, paving the way for broader applications in medical image analysis and AI-driven diagnostic support.
+            </p>
+    
+            <div class="d-flex flex-wrap gap-2">
+              <a href="https://github.com/pitthexai/GAN_Synthetic_Knee_Radiographs" target="_blank" class="btn btn-dark d-inline-flex align-items-center">
+                <i class="bi bi-github me-2" style="font-size: 1.2rem;"></i> GitHub Repository
+              </a>
+              <a href="https://academic.oup.com/jamia/article/31/11/2668/7765642" target="_blank" class="btn btn-primary d-inline-flex align-items-center">
+                <i class="bi bi-file-earmark-text me-2" style="font-size: 1.2rem;"></i> Read the Paper
+              </a>
+            </div>
+          </div>
+    
+          <div class="col-lg-3" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/research/generative-knee-ai.png" class="img-fluid mt-3" alt="Generative AI in Orthopedics Imaging">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 footer-contact">
+            <img src="assets/img/Pitthexai_logo.png" class="rounded footer-img" alt="HexAI Logo">
+          </div>
+          <div class="col-md-4 footer-links">
+            <h4>Address</h4>
+            <p>University of Pittsburgh<br>
+              School of Health and Rehabilitation Sciences<br>
+              Department of Health Informatics<br>
+              6030 Forbes Tower<br>
+              Pittsburgh, PA 15260</p>
+          </div>
+          <div class="col-md-4 footer-links">
+            <h4>Contact</h4>
+            <p>Email: tafti[dot]ahmad[at]pitt.edu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Pitt Health + Explainable AI (Pitt HexAI) Research Laboratory</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
