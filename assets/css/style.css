@@ -1963,7 +1963,7 @@ section {
 #see-all-news {
   display: inline-block;
   margin-top: 8px;
-  font-size: 1.5rem;     
+  font-size: 1.25rem;     
   font-weight: 600;       
   color: #0d6efd;         
   text-decoration: none;
@@ -1974,6 +1974,7 @@ section {
   color: #084298;          
   text-decoration: underline;
 }
+
 
 
 
