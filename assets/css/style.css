@@ -1963,8 +1963,8 @@ section {
 #see-all-news {
   display: inline-block;
   margin-top: 8px;
-  font-size: 1.05rem;     
-  font-weight: 600;       
+  font-size: 1.15rem;     
+  font-weight: 700;       
   color: #0d6efd;         
   text-decoration: none;
   transition: color 0.3s ease;
@@ -1974,3 +1974,4 @@ section {
   color: #084298;          
   text-decoration: underline;
 }
+
