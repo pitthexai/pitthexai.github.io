@@ -1016,86 +1016,81 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
-<!-- ===== News Slider Script ===== -->
+<!-- ===== News Slider Script (fixed) ===== -->
 <script>
 (function () {
-  function monthKey(d) {
-    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0');
-  }
-  function monthLabel(d) {
-    return d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
-  }
+  const archiveEl = document.getElementById('news-archive');
+  const swiperEl  = document.getElementById('news-swiper');
+  const seeAllBtn = document.getElementById('see-all-news');
+  if (!archiveEl || !swiperEl || !seeAllBtn) return;
+
+  function monthKey(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'); }
+  function monthLabel(d){ return d.toLocaleString('en-US', { month: 'long', year: 'numeric' }); }
 
   const now = new Date();
   const lastMonths = [];
-  for (let i=0; i<4; i++) {
-    const d = new Date(now.getFullYear(), now.getMonth()-i, 1);
-    lastMonths.push(monthKey(d));
+  for (let i = 0; i < 4; i++) {
+    lastMonths.push(monthKey(new Date(now.getFullYear(), now.getMonth() - i, 1)));
   }
 
-  const allList = document.getElementById('news-archive');
-  const items = Array.from(allList.querySelectorAll('li'))
+  const items = Array.from(archiveEl.querySelectorAll('li'))
     .map(li => {
-      const ds = li.getAttribute('data-date');
-      const d = ds ? new Date(ds) : null;
+      const ds = li.getAttribute('data-date');          // YYYY-MM-DD
+      const parts = ds ? ds.split('-').map(Number) : null;
+      const d = (parts && parts.length === 3)
+        ? new Date(Date.UTC(parts[0], parts[1]-1, parts[2]))
+        : null;
       return { li, date: d, key: d ? monthKey(d) : null };
     })
-    .filter(x => x.date);
+    .filter(x => x.date instanceof Date && !isNaN(x.date));
 
-  const grouped = {};
-  lastMonths.forEach(k => grouped[k] = []);
-  items.forEach(x => {
-    if (grouped.hasOwnProperty(x.key)) grouped[x.key].push(x);
-  });
+  const grouped = Object.fromEntries(lastMonths.map(k => [k, []]));
+  items.forEach(x => { if (grouped.hasOwnProperty(x.key)) grouped[x.key].push(x); });
 
-  const swiperWrapper = document.querySelector('#news-swiper .swiper-wrapper');
+  const wrapper = swiperEl.querySelector('.swiper-wrapper');
   lastMonths.forEach((k, idx) => {
-    const monthDate = new Date(now.getFullYear(), now.getMonth()-idx, 1);
-    const monthName = monthLabel(monthDate);
+    const monthDate = new Date(now.getFullYear(), now.getMonth() - idx, 1);
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
 
-    const card = document.createElement('div');
-    card.className = 'news-card';
-
-    const title = document.createElement('div');
-    title.className = 'news-month-title';
-    title.textContent = monthName;
+    const card  = document.createElement('div');  card.className  = 'news-card';
+    const title = document.createElement('div');  title.className = 'news-month-title';
+    title.textContent = monthLabel(monthDate);
     card.appendChild(title);
 
-    const monthItems = grouped[k].sort((a,b) => b.date - a.date);
+    const monthItems = (grouped[k] || []).sort((a, b) => b.date - a.date);
     if (monthItems.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'text-muted';
       empty.textContent = 'No news posted this month.';
       card.appendChild(empty);
     } else {
-      monthItems.forEach(({li}) => {
+      monthItems.forEach(({ li }) => {
         const div = document.createElement('div');
         div.className = 'news-item';
-        div.innerHTML = li.innerHTML;
+        div.innerHTML = li.innerHTML;  
         card.appendChild(div);
       });
     }
 
     slide.appendChild(card);
-    swiperWrapper.appendChild(slide);
+    wrapper.appendChild(slide);
   });
 
-  document.getElementById('see-all-news').addEventListener('click', function (e) {
+  seeAllBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    const arch = document.getElementById('news-archive');
-    arch.style.display = arch.style.display === 'none' ? 'block' : 'none';
-    this.textContent = arch.style.display === 'none' ? 'See all News' : 'Hide all News';
+    const isHidden = archiveEl.style.display === 'none' || archiveEl.style.display === '';
+    archiveEl.style.display = isHidden ? 'block' : 'none';
+    this.textContent = isHidden ? 'Hide all News' : 'See all News';
   });
 
   new Swiper('#news-swiper', {
     loop: true,
     autoplay: { delay: 8000, disableOnInteraction: false },
-    pagination: { el: '.news-swiper .swiper-pagination', clickable: true },
+    pagination: { el: '#news-swiper .swiper-pagination', clickable: true },
     navigation: {
-      nextEl: '.news-swiper .swiper-button-next',
-      prevEl: '.news-swiper .swiper-button-prev'
+      nextEl: '#news-swiper .swiper-button-next',
+      prevEl: '#news-swiper .swiper-button-prev'
     },
     slidesPerView: 1,
     spaceBetween: 16
@@ -1104,12 +1099,11 @@
 </script>
 <!-- ===== End News Slider Script ===== -->
 
-
-
                 
 </body>
 
 </html>
+
 
 
 
