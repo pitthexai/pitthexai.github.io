@@ -1953,3 +1953,8 @@ section {
 .news-item{ margin:6px 0 0 0; padding-left:16px; }
 .news-item a{ text-decoration: underline; }
 .news-swiper .swiper-pagination{ margin-top:8px; position:relative; }
+
+.news-swiper .swiper-button-next,
+.news-swiper .swiper-button-prev {
+  display: none !important;
+}
