@@ -1935,4 +1935,21 @@ section {
   }
 }
 
-
+/* === News (Swiper) === */
+.news-swiper .swiper-slide { display: flex; }
+.news-card{
+  width:100%;
+  background:#fff;
+  border:1px solid #e8eefb;
+  border-radius:8px;
+  box-shadow:0 0 25px rgba(16,110,234,.08);
+  padding:16px;
+}
+.news-month-title{
+  font-weight:700;
+  margin-bottom:8px;
+  color:#106eea;
+}
+.news-item{ margin:6px 0 0 0; padding-left:16px; }
+.news-item a{ text-decoration: underline; }
+.news-swiper .swiper-pagination{ margin-top:8px; position:relative; }
