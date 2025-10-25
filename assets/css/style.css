@@ -1958,3 +1958,19 @@ section {
 .news-swiper .swiper-button-prev {
   display: none !important;
 }
+
+/* ===== Style for the 'See all News' link ===== */
+#see-all-news {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1.05rem;     
+  font-weight: 600;       
+  color: #0d6efd;         
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#see-all-news:hover {
+  color: #084298;          
+  text-decoration: underline;
+}
