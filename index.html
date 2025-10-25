@@ -1016,7 +1016,7 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
-<!-- ===== News Slider Script (fixed) ===== -->
+<!-- ===== News Slider Script (fixed: parse month/year from text) ===== -->
 <script>
 (function () {
   const archiveEl = document.getElementById('news-archive');
@@ -1027,19 +1027,30 @@
   function monthKey(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'); }
   function monthLabel(d){ return d.toLocaleString('en-US', { month: 'long', year: 'numeric' }); }
 
+  // --- new helper to extract "Oct. 2025" etc. from text ---
+  function extractDateFromText(li) {
+    const txt = li.textContent.trim();
+    const m = txt.match(/\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(\d{4})/i);
+    if (!m) return null;
+    const map = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+    const mon3 = m[1].slice(0,3).toLowerCase();
+    const y = parseInt(m[2],10);
+    const mm = map[mon3];
+    if (mm == null) return null;
+    return new Date(y, mm, 1);   // only month/year
+  }
+
   const now = new Date();
   const lastMonths = [];
   for (let i = 0; i < 4; i++) {
     lastMonths.push(monthKey(new Date(now.getFullYear(), now.getMonth() - i, 1)));
   }
 
+  // --- replaced block: now uses extractDateFromText ---
   const items = Array.from(archiveEl.querySelectorAll('li'))
     .map(li => {
-      const ds = li.getAttribute('data-date');          // YYYY-MM-DD
-      const parts = ds ? ds.split('-').map(Number) : null;
-      const d = (parts && parts.length === 3)
-        ? new Date(Date.UTC(parts[0], parts[1]-1, parts[2]))
-        : null;
+      const ds = li.getAttribute('data-date');
+      const d = ds ? new Date(ds) : extractDateFromText(li);
       return { li, date: d, key: d ? monthKey(d) : null };
     })
     .filter(x => x.date instanceof Date && !isNaN(x.date));
@@ -1053,8 +1064,10 @@
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
 
-    const card  = document.createElement('div');  card.className  = 'news-card';
-    const title = document.createElement('div');  title.className = 'news-month-title';
+    const card  = document.createElement('div');  
+    card.className  = 'news-card';
+    const title = document.createElement('div');  
+    title.className = 'news-month-title';
     title.textContent = monthLabel(monthDate);
     card.appendChild(title);
 
@@ -1086,7 +1099,7 @@
 
   new Swiper('#news-swiper', {
     loop: true,
-    autoplay: { delay: 8000, disableOnInteraction: false },
+    autoplay: { delay: 6000, disableOnInteraction: false },
     pagination: { el: '#news-swiper .swiper-pagination', clickable: true },
     navigation: {
       nextEl: '#news-swiper .swiper-button-next',
@@ -1099,10 +1112,12 @@
 </script>
 <!-- ===== End News Slider Script ===== -->
 
+
                 
 </body>
 
 </html>
+
 
 
 
