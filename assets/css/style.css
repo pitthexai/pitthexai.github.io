@@ -1986,19 +1986,17 @@ section {
 
 
 
-#navbar .nav-icon { margin-left: 8px; }
+#site-searchbar .form-control { width: 260px; }
+@media (max-width: 768px){
+  #site-searchbar .container { flex-direction: column; }
+  #site-searchbar .form-control { width: 100%; margin-bottom: .5rem; }
+}
 
-#navbar .nav-icon a,
-#navbar .nav-icon .nav-icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#navbar .bi-linkedin,
+#navbar .bi-youtube { 
   font-size: 1.6rem;  
-  line-height: 1;
-  padding: 0;
-  background: transparent;
-  border: 0;          
-  cursor: pointer;
+  line-height: 1;  
+  vertical-align: middle;
 }
 
 
@@ -2011,6 +2009,7 @@ section {
 #search-results .card a { color: #0056b3; }
 #search-results .card a:hover { text-decoration: underline; }
 #search-results .small { line-height: 1.35; }
+
 
 
 
