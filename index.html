@@ -376,9 +376,9 @@
     </section><!-- End Services Section -->
 
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= News Section ======= -->
 
-    <section id="team" class="team section-bg">
+    <section id="news" class="team section-bg">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -936,6 +936,25 @@
 </main><!-- End #main -->
 -->
 
+
+<script>
+(function(){
+  function openNewsIfNeeded(){
+    if (location.hash === '#news') {
+      var btn = document.getElementById('see-all-news');
+      if (btn) btn.click();
+      var sec = document.getElementById('news');
+      if (sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+  openNewsIfNeeded();
+  window.addEventListener('hashchange', openNewsIfNeeded);
+})();
+</script>
+
+
+
+    
 <!-- ======= Services Section ======= -->
 <section id="partners" class="services">
     <div class="container" data-aos="fade-up">
@@ -1179,9 +1198,12 @@ let PAGE_DB  = {};
 
 
 function extractMainText(doc) {
-  const main = doc.querySelector('#main') || doc.body || doc;
+  var clone = doc.cloneNode(true);
+  clone.querySelectorAll('script,style,noscript').forEach(function(el){ el.remove(); });
+  var main = clone.querySelector('#main') || clone.body || clone;
   return (main.textContent || '').replace(/\s+/g, ' ').trim();
 }
+
 
 
 function makeSnippet(text, from, to, span = 90) {
@@ -1250,7 +1272,9 @@ function renderResults(hits, query) {
       const from = p[0], to = p[0] + p[1];
       const snippet = makeSnippet(rec.content, from, to);
       const fragmentText = pickFragment(rec.content, from, to);
-      const link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
+      let link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
+        if (rec.url.endsWith('index.html')) { link = rec.url + '#news'; }
+
       return `
         <div class="small mb-2">
           <a href="${link}">${rec.title}</a>
@@ -1301,6 +1325,7 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 </body>
 
 </html>
+
 
 
 
