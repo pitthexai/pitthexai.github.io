@@ -2060,6 +2060,13 @@ a, p, li { word-break: break-word; }
 
 
 
+@media (max-width: 1366px){
+  .navbar a { font-size:16px; padding:0 4px; }
+  #navbar > ul > li { padding-right:6px; }
+}
+
+
+
 
 
 
