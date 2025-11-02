@@ -1993,10 +1993,12 @@ section {
 
 #navbar .bi-linkedin,
 #navbar .bi-youtube {
-  font-size: 1.7rem;       
+  font-size: 1.7rem;  
+  line-height: 1;
   vertical-align: middle; 
 }
 
+#navbar .ml-2 { margin-left: 6px !important; }
 
 #navbar a[aria-label="LinkedIn"]:hover .bi-linkedin { color: #0a66c2; }
 #navbar a[aria-label="YouTube"]:hover .bi-youtube { color: #ff0000; }
@@ -2007,6 +2009,7 @@ section {
 #search-results .card a { color: #0056b3; }
 #search-results .card a:hover { text-decoration: underline; }
 #search-results .small { line-height: 1.35; }
+
 
 
 
