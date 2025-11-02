@@ -2028,6 +2028,8 @@ section { overflow: visible; }
 a, p, li { word-break: break-word; }
 
 
+#header .logo { flex: 0 0 auto; }    
+#header .logo img { max-width: none; height: auto; }
 
 
 
