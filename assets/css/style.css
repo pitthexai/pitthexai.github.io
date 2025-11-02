@@ -1998,17 +1998,22 @@ section {
   vertical-align: middle; 
 }
 
-#navbar .ml-2 { margin-left: 3px !important; }
-
 #navbar a[aria-label="LinkedIn"]:hover .bi-linkedin { color: #0a66c2; }
 #navbar a[aria-label="YouTube"]:hover .bi-youtube { color: #ff0000; }
 
+#navbar .bi-linkedin {
+  margin-right: 2px;
+}
+#navbar .bi-youtube {
+  margin-left: 2px;
+}
 
 
 #search-results .card { border-radius: .5rem; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
 #search-results .card a { color: #0056b3; }
 #search-results .card a:hover { text-decoration: underline; }
 #search-results .small { line-height: 1.35; }
+
 
 
 
