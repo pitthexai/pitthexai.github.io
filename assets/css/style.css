@@ -1991,12 +1991,17 @@ section {
   #site-searchbar .form-control { width: 100%; margin-bottom: .5rem; }
 }
 
-
+#navbar .bi-linkedin,
+#navbar .bi-youtube {
+  font-size: 1.4rem;       
+  vertical-align: middle; 
+}
 
 #search-results .card { border-radius: .5rem; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
 #search-results .card a { color: #0056b3; }
 #search-results .card a:hover { text-decoration: underline; }
 #search-results .small { line-height: 1.35; }
+
 
 
 
