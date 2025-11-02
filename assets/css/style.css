@@ -1985,4 +1985,14 @@ section {
 
 
 
+#site-searchbar .form-control { width: 260px; }
+@media (max-width: 768px){
+  #site-searchbar .container { flex-direction: column; }
+  #site-searchbar .form-control { width: 100%; margin-bottom: .5rem; }
+}
+
+
+#navbar .btn { margin-left: 12px; }
+
+
 
