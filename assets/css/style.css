@@ -2011,7 +2011,21 @@ section {
 #search-results .small { line-height: 1.35; }
 
 
+/* ===== Responsive base fixes ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { width:100%; overflow-x:hidden; }
+img, video { max-width:100%; height:auto; }
+section { overflow: visible; }
 
+.navbar { margin-left: 0; padding: 0 1rem; }
+.navbar ul { flex-wrap: wrap; gap: .5rem 1rem; }
+
+.news-swiper .swiper-slide { max-width:100%; }
+.news-card { width:100%; }
+
+.footer-img, .partners-img, .partners-img-applied { max-width:100%; height:auto; }
+
+a, p, li { word-break: break-word; }
 
 
 
