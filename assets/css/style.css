@@ -2046,9 +2046,6 @@ a, p, li { word-break: break-word; }
   height: 0;
 }
 
-#navbar ul .flex-break + li {
-  margin-left: auto; 
-}
 
 #navbar > ul > li {
   padding: 10px 8px 10px 0;
@@ -2064,6 +2061,7 @@ a, p, li { word-break: break-word; }
   .navbar a { font-size:16px; padding:0 4px; }
   #navbar > ul > li { padding-right:6px; }
 }
+
 
 
 
