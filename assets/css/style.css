@@ -2032,6 +2032,37 @@ a, p, li { word-break: break-word; }
 #header .logo img { max-width: none; height: auto; }
 
 
+/* ==== Fixed Utility Bar (LinkedIn + YouTube + Search) ==== */
+.utility-bar{
+  background:#f1f6fe;
+  border-top:1px solid #e2eefd;
+  border-bottom:1px solid #e2eefd;
+}
+
+.utility-bar i{
+  font-size:1.4rem;
+  line-height:1;
+  vertical-align:middle;
+}
+
+.utility-bar a{
+  color:#222;
+}
+
+.utility-bar a[aria-label="LinkedIn"]:hover {
+  color:#0a66c2;
+}
+
+.utility-bar a[aria-label="YouTube"]:hover {
+  color:#ff0000;
+}
+
+@media (max-width:768px){
+  #utility-bar .container{
+    justify-content:center;
+  }
+}
+
 
 
 
