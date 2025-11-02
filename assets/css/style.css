@@ -2018,7 +2018,7 @@ img, video { max-width:100%; height:auto; }
 section { overflow: visible; }
 
 .navbar { margin-left: 0; padding: 0 1rem; }
-.navbar ul { flex-wrap: wrap; gap: .5rem 1rem; }
+.navbar ul { flex-wrap: nowrap; }
 
 .news-swiper .swiper-slide { max-width:100%; }
 .news-card { width:100%; }
@@ -2026,6 +2026,7 @@ section { overflow: visible; }
 .footer-img, .partners-img, .partners-img-applied { max-width:100%; height:auto; }
 
 a, p, li { word-break: break-word; }
+
 
 
 
