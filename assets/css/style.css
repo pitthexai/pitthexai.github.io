@@ -2034,6 +2034,31 @@ a, p, li { word-break: break-word; }
 
 
 
+#navbar ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#navbar ul .flex-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+#navbar ul .flex-break + li {
+  margin-left: auto; 
+}
+
+#navbar > ul > li {
+  padding: 10px 8px 10px 0;
+}
+
+@media (max-width: 991.98px) {
+  #navbar ul { flex-wrap: nowrap; }
+}
+
+
 
 
 
