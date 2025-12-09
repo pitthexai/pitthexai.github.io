@@ -504,8 +504,8 @@ h6 {
   width: 100%;
   height: 75vh;
   background: url("../img/background_winter_5.jpg") center top no-repeat;
-  background-size: 90%;
-  /* background-size: cover;*/
+  /*background-size: 90%;*/
+  background-size: cover;
   position: relative;
 }
 
@@ -2063,6 +2063,7 @@ a, p, li { word-break: break-word; }
     justify-content:center;
   }
 }
+
 
 
 
