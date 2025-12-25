@@ -1294,7 +1294,7 @@ function extractMainText(doc) {
 
 
 
-function makeSnippet(text, from, to, span = 90) {
+function makeSnippet(text, from, to, span = 35) {
   const start = Math.max(0, from - span);
   const end   = Math.min(text.length, to + span);
   const prefix = start > 0 ? '… ' : '';
@@ -1413,6 +1413,7 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 </body>
 
 </html>
+
 
 
 
