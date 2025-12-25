@@ -1162,6 +1162,7 @@
 <script src="assets/js/main.js"></script>
 
 
+
 <!-- ===== News Slider Script (fixed: parse month/year from text) ===== -->
 <script>
 (function () {
@@ -1170,20 +1171,26 @@
   const seeAllBtn = document.getElementById('see-all-news');
   if (!archiveEl || !swiperEl || !seeAllBtn) return;
 
-  function monthKey(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'); }
-  function monthLabel(d){ return d.toLocaleString('en-US', { month: 'long', year: 'numeric' }); }
+  function monthKey(d){ 
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); 
+  }
+  function monthLabel(d){ 
+    return d.toLocaleString('en-US', { month: 'long', year: 'numeric' }); 
+  }
 
-  // --- new helper to extract "Oct. 2025" etc. from text ---
+  // Extract "Oct. 2025" / "October 2025" from each <li>
   function extractDateFromText(li) {
-    const txt = li.textContent.trim();
+    const txt = (li.textContent || '').trim();
     const m = txt.match(/\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(\d{4})/i);
     if (!m) return null;
-    const map = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
-    const mon3 = m[1].slice(0,3).toLowerCase();
-    const y = parseInt(m[2],10);
+
+    const map = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
+    const mon3 = m[1].slice(0, 3).toLowerCase();
+    const y = parseInt(m[2], 10);
     const mm = map[mon3];
-    if (mm == null) return null;
-    return new Date(y, mm, 1);   // only month/year
+    if (mm == null || isNaN(y)) return null;
+
+    return new Date(y, mm, 1); // month/year only
   }
 
   const now = new Date();
@@ -1192,7 +1199,6 @@
     lastMonths.push(monthKey(new Date(now.getFullYear(), now.getMonth() - i, 1)));
   }
 
-  // --- replaced block: now uses extractDateFromText ---
   const items = Array.from(archiveEl.querySelectorAll('li'))
     .map(li => {
       const ds = li.getAttribute('data-date');
@@ -1202,22 +1208,32 @@
     .filter(x => x.date instanceof Date && !isNaN(x.date));
 
   const grouped = Object.fromEntries(lastMonths.map(k => [k, []]));
-  items.forEach(x => { if (grouped.hasOwnProperty(x.key)) grouped[x.key].push(x); });
+  items.forEach(x => { 
+    if (grouped.hasOwnProperty(x.key)) grouped[x.key].push(x); 
+  });
 
   const wrapper = swiperEl.querySelector('.swiper-wrapper');
+  if (!wrapper) return;
+
+  // Prevent duplicates if something re-runs
+  wrapper.innerHTML = '';
+
   lastMonths.forEach((k, idx) => {
     const monthDate = new Date(now.getFullYear(), now.getMonth() - idx, 1);
+
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
 
-    const card  = document.createElement('div');  
-    card.className  = 'news-card';
-    const title = document.createElement('div');  
+    const card = document.createElement('div');
+    card.className = 'news-card';
+
+    const title = document.createElement('div');
     title.className = 'news-month-title';
     title.textContent = monthLabel(monthDate);
     card.appendChild(title);
 
     const monthItems = (grouped[k] || []).sort((a, b) => b.date - a.date);
+
     if (monthItems.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'text-muted';
@@ -1227,7 +1243,7 @@
       monthItems.forEach(({ li }) => {
         const div = document.createElement('div');
         div.className = 'news-item';
-        div.innerHTML = li.innerHTML;  
+        div.innerHTML = li.innerHTML;
         card.appendChild(div);
       });
     }
@@ -1258,9 +1274,12 @@
 </script>
 <!-- ===== End News Slider Script ===== -->
 
+
+<!-- ===== News Slider Script (fixed: parse month/year from text) ===== -->
+
+    
 <script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
 <script>
-
 const ALLOWED_PAGES = {
   'index.html': 'Home',
   'people.html': 'Team',
@@ -1269,6 +1288,12 @@ const ALLOWED_PAGES = {
   'publications.html': 'Publications',
   'githubrepo.html': 'GitHub',
   'events.html': 'AI Summer School'
+};
+
+const EXTERNAL_TARGETS = {
+  'githubrepo.html': 'https://github.com/pitthexai/',
+  'publications.html': 'https://scholar.google.com/citations?user=NxeXUqwAAAAJ&hl=en',
+  'events.html': 'https://pitthexai.github.io/AISummerSchool/'
 };
 
 function baseDir() {
@@ -1308,16 +1333,35 @@ const PAGES = Array.from(new Set([
   ...discoverLinks()
 ]))
 .filter(u => new URL(u).origin === location.origin)
-.filter(isAllowedUrl); 
+.filter(isAllowedUrl);
 
 let lunrIdx = null;
 let PAGE_DB  = {};
 
-function extractMainText(doc) {
+function normalizeText(s) {
+  return (s || '').replace(/\s+/g, ' ').trim();
+}
+
+// کل متن صفحه (اختیاری: حذف news)
+function extractMainText(doc, { removeNews = false } = {}) {
   const clone = doc.cloneNode(true);
   clone.querySelectorAll('script,style,noscript').forEach(el => el.remove());
+
+  if (removeNews) {
+    const news = clone.querySelector('#news');
+    if (news) news.remove();
+  }
+
   const main = clone.querySelector('#main') || clone.body || clone;
-  return (main.textContent || '').replace(/\s+/g, ' ').trim();
+  return normalizeText(main.textContent || '');
+}
+
+// فقط متن یک node مثل #news
+function extractTextFromNode(node) {
+  if (!node) return '';
+  const clone = node.cloneNode(true);
+  clone.querySelectorAll('script,style,noscript').forEach(el => el.remove());
+  return normalizeText(clone.textContent || '');
 }
 
 function makeSnippet(text, from, to, after = 50) {
@@ -1333,19 +1377,55 @@ function pickFragment(text, from, to) {
 
 async function buildIndex() {
   const docs = [];
+
   for (const url of PAGES) {
     try {
       const res = await fetch(url, { cache: 'no-cache' });
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
 
-      const title = (doc.querySelector('title')?.textContent || prettyPageLabel(url)).trim();
-      const content = extractMainText(doc);
-      const pageLabel = prettyPageLabel(url);
+      const fn = filenameFromUrl(url);
+      const baseTitle =
+        (doc.querySelector('title')?.textContent || prettyPageLabel(url)).trim();
 
-      const rec = { url, title, content, pageLabel };
-      PAGE_DB[url] = rec;
-      docs.push(rec);
+      // ===== special case: index.html -> دو رکورد جدا (Home و News) =====
+      if (fn === 'index.html') {
+        const homeContent = extractMainText(doc, { removeNews: true });
+        const newsContent = extractTextFromNode(doc.querySelector('#news'));
+
+        const recHome = {
+          url: location.origin + '/index.html#home',
+          title: baseTitle,
+          content: homeContent,
+          pageLabel: 'Home'
+        };
+
+        const recNews = {
+          url: location.origin + '/index.html#news',
+          title: baseTitle + ' — News',
+          content: newsContent,
+          pageLabel: 'Home / News'
+        };
+
+        PAGE_DB[recHome.url] = recHome;
+        docs.push(recHome);
+
+        if (newsContent) {
+          PAGE_DB[recNews.url] = recNews;
+          docs.push(recNews);
+        }
+      }
+
+      // ===== سایر صفحات =====
+      else {
+        const content = extractMainText(doc);
+        const pageLabel = prettyPageLabel(url);
+
+        const rec = { url, title: baseTitle, content, pageLabel };
+        PAGE_DB[url] = rec;
+        docs.push(rec);
+      }
+
     } catch (_) {}
   }
 
@@ -1390,15 +1470,35 @@ function renderResults(hits, query) {
       const snippet = makeSnippet(rec.content, from, to);
       const fragmentText = pickFragment(rec.content, from, to);
 
-      let link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
+      const fn = filenameFromUrl(rec.url);
 
-      if (rec.url.endsWith('index.html') && rec.content.includes(fragmentText)) {
-          link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
-        }
+      const isHomeNews = rec.url.includes('index.html#news');
+      const isHomeMain = rec.url.includes('index.html#home');
+
+      let link;
+      let targetAttr = '';
+
+      // صفحات خارجی
+      if (EXTERNAL_TARGETS[fn]) {
+        link = EXTERNAL_TARGETS[fn];
+        targetAttr = ' target="_blank" rel="noopener"';
+      }
+      // نتیجه از News (داخل home)
+      else if (isHomeNews) {
+        link = location.origin + '/index.html#news';
+      }
+      // نتیجه از Home (بدون news) -> highlight متن
+      else if (isHomeMain) {
+        link = location.origin + '/index.html#:~:text=' + encodeURIComponent(fragmentText);
+      }
+      // سایر صفحات داخلی -> highlight متن
+      else {
+        link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
+      }
 
       return `
         <div class="small mb-2">
-          <a href="${link}">${rec.title}</a>
+          <a href="${link}"${targetAttr}>${rec.title}</a>
           <div class="text-muted">${rec.pageLabel}</div>
           <div>${snippet.replace(/</g,'&lt;')}</div>
         </div>`;
@@ -1436,11 +1536,11 @@ document.getElementById('site-search-form')?.addEventListener('submit', async (e
 });
 </script>
 
-
                 
 </body>
 
 </html>
+
 
 
 
