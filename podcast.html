@@ -96,6 +96,8 @@
 
 
                <!-- ======= Search toggle button in navbar ========= -->
+
+
                 <li class="ml-1 d-inline-block push-right">
                   <a class="nav-link p-0" href="https://www.linkedin.com/in/ahmadtafti/" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <i class="bi bi-linkedin"></i>
@@ -109,10 +111,12 @@
                 </li>
                 
                 <li class="ml-1 d-inline-block">
-                  <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#site-searchbar" aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
+                  <button class="btn btn-sm btn-outline-primary" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#site-searchbar"
+                          aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
                     <i class="bi bi-search"></i>
                   </button>
-                </li> 
+                </li>
 
                 
                 <!--<li class="nav-item dropdown">
@@ -150,10 +154,10 @@
 <div id="site-searchbar" class="collapse bg-light border-bottom">
   <div class="container py-2 d-flex flex-column align-items-start justify-content-start">
     <form id="site-search-form" class="form-inline my-1 w-100" role="search" autocomplete="off">
-      <input id="site-search-input" 
-             type="search" 
-             class="form-control form-control-sm mr-2 flex-grow-1" 
-             placeholder="Search this site…" 
+      <input id="site-search-input"
+             type="search"
+             class="form-control form-control-sm mr-2 flex-grow-1"
+             placeholder="Search this site…"
              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
       <button class="btn btn-sm btn-primary" type="submit">
         <i class="bi bi-search"></i> Search
@@ -161,8 +165,6 @@
     </form>
 
     <div id="search-results" class="container d-none my-2"></div>
-
-
   </div>
 </div>
 
@@ -1302,5 +1304,6 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 </body>
 
 </html>
+
 
 
