@@ -1294,7 +1294,7 @@ function extractMainText(doc) {
 
 
 
-function makeSnippet(text, from, to, after = 100) {
+function makeSnippet(text, from, to, after = 80) {
   const start = from;                        
   const end   = Math.min(text.length, to + after);
 
@@ -1413,6 +1413,7 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 </body>
 
 </html>
+
 
 
 
