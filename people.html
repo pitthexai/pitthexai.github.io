@@ -121,11 +121,13 @@
                   </a>
                 </li>
                 
-                <li class="ml-1 d-inline-block">
-                  <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#site-searchbar" aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
-                    <i class="bi bi-search"></i>
-                  </button>
-                </li> 
+            <li class="ml-1 d-inline-block">
+              <button class="btn btn-sm btn-outline-primary" type="button"
+                data-bs-toggle="collapse" data-bs-target="#site-searchbar"
+                aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
+                <i class="bi bi-search"></i>
+              </button>
+            </li>
                 
         <!--
                 <li class="nav-item dropdown">
@@ -148,10 +150,11 @@
                                 class="bi bi-github"></i> GitHub Repositories</a>
                     </div>
                 </li>
+                -->
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
-        -->
+        
     </div>
 </header><!-- End Header -->
 
@@ -1666,12 +1669,12 @@ function extractMainText(doc) {
 
 
 
-function makeSnippet(text, from, to, span = 35) {
-  const start = Math.max(0, from - span);
-  const end   = Math.min(text.length, to + span);
-  const prefix = start > 0 ? '… ' : '';
+function makeSnippet(text, from, to, after = 80) {
+  const start = from;                        
+  const end   = Math.min(text.length, to + after);
+
   const suffix = end < text.length ? ' …' : '';
-  return prefix + text.slice(start, end) + suffix;
+  return text.slice(start, end) + suffix;
 }
 
 
@@ -1784,6 +1787,7 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 </body>
 
 </html>
+
 
 
 
