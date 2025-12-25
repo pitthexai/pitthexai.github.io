@@ -1294,12 +1294,12 @@ function extractMainText(doc) {
 
 
 
-function makeSnippet(text, from, to, span = 35) {
-  const start = Math.max(0, from - span);
-  const end   = Math.min(text.length, to + span);
-  const prefix = start > 0 ? '… ' : '';
+function makeSnippet(text, from, to, after = 100) {
+  const start = from;                        
+  const end   = Math.min(text.length, to + after);
+
   const suffix = end < text.length ? ' …' : '';
-  return prefix + text.slice(start, end) + suffix;
+  return text.slice(start, end) + suffix;
 }
 
 
@@ -1413,6 +1413,7 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 </body>
 
 </html>
+
 
 
 
