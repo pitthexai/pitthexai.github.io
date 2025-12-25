@@ -92,6 +92,29 @@
                 <li><a class="nav-link scrollto" href="https://scholar.google.com/citations?user=NxeXUqwAAAAJ&hl=en" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Publications</a></li>
                 <li><a class="nav-link scrollto" href="https://github.com/pitthexai/" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a></li>
 
+
+
+
+               <!-- ======= Search toggle button in navbar ========= -->
+                <li class="ml-1 d-inline-block push-right">
+                  <a class="nav-link p-0" href="https://www.linkedin.com/in/ahmadtafti/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+                </li>
+                
+                <li class="ml-1 d-inline-block">
+                  <a class="nav-link p-0" href="https://www.youtube.com/@user-xb1ti1jp4e" target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </li>
+                
+                <li class="ml-1 d-inline-block">
+                  <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#site-searchbar" aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </li> 
+
+                
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink"
                        aria-haspopup="true" aria-expanded="false">
@@ -120,6 +143,31 @@
 
     </div>
 </header><!-- End Header -->
+
+
+
+<!-- ======== Collapsible site search bar ========= -->
+<div id="site-searchbar" class="collapse bg-light border-bottom">
+  <div class="container py-2 d-flex flex-column align-items-start justify-content-start">
+    <form id="site-search-form" class="form-inline my-1 w-100" role="search" autocomplete="off">
+      <input id="site-search-input" 
+             type="search" 
+             class="form-control form-control-sm mr-2 flex-grow-1" 
+             placeholder="Search this site…" 
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <button class="btn btn-sm btn-primary" type="submit">
+        <i class="bi bi-search"></i> Search
+      </button>
+    </form>
+
+    <div id="search-results" class="container d-none my-2"></div>
+
+
+  </div>
+</div>
+
+
+
 
 <main id="main" data-aos="fade-up">
 
@@ -997,6 +1045,261 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
+
+
+
+
+<!-- ===== News Slider Script (fixed: parse month/year from text) ===== -->
+<script>
+(function () {
+  const archiveEl = document.getElementById('news-archive');
+  const swiperEl  = document.getElementById('news-swiper');
+  const seeAllBtn = document.getElementById('see-all-news');
+  if (!archiveEl || !swiperEl || !seeAllBtn) return;
+
+  function monthKey(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'); }
+  function monthLabel(d){ return d.toLocaleString('en-US', { month: 'long', year: 'numeric' }); }
+
+  // --- new helper to extract "Oct. 2025" etc. from text ---
+  function extractDateFromText(li) {
+    const txt = li.textContent.trim();
+    const m = txt.match(/\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(\d{4})/i);
+    if (!m) return null;
+    const map = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+    const mon3 = m[1].slice(0,3).toLowerCase();
+    const y = parseInt(m[2],10);
+    const mm = map[mon3];
+    if (mm == null) return null;
+    return new Date(y, mm, 1);   // only month/year
+  }
+
+  const now = new Date();
+  const lastMonths = [];
+  for (let i = 0; i < 4; i++) {
+    lastMonths.push(monthKey(new Date(now.getFullYear(), now.getMonth() - i, 1)));
+  }
+
+  // --- replaced block: now uses extractDateFromText ---
+  const items = Array.from(archiveEl.querySelectorAll('li'))
+    .map(li => {
+      const ds = li.getAttribute('data-date');
+      const d = ds ? new Date(ds) : extractDateFromText(li);
+      return { li, date: d, key: d ? monthKey(d) : null };
+    })
+    .filter(x => x.date instanceof Date && !isNaN(x.date));
+
+  const grouped = Object.fromEntries(lastMonths.map(k => [k, []]));
+  items.forEach(x => { if (grouped.hasOwnProperty(x.key)) grouped[x.key].push(x); });
+
+  const wrapper = swiperEl.querySelector('.swiper-wrapper');
+  lastMonths.forEach((k, idx) => {
+    const monthDate = new Date(now.getFullYear(), now.getMonth() - idx, 1);
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+
+    const card  = document.createElement('div');  
+    card.className  = 'news-card';
+    const title = document.createElement('div');  
+    title.className = 'news-month-title';
+    title.textContent = monthLabel(monthDate);
+    card.appendChild(title);
+
+    const monthItems = (grouped[k] || []).sort((a, b) => b.date - a.date);
+    if (monthItems.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'text-muted';
+      empty.textContent = 'No news posted this month.';
+      card.appendChild(empty);
+    } else {
+      monthItems.forEach(({ li }) => {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.innerHTML = li.innerHTML;  
+        card.appendChild(div);
+      });
+    }
+
+    slide.appendChild(card);
+    wrapper.appendChild(slide);
+  });
+
+  seeAllBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    const isHidden = archiveEl.style.display === 'none' || archiveEl.style.display === '';
+    archiveEl.style.display = isHidden ? 'block' : 'none';
+    this.textContent = isHidden ? 'Hide all News' : 'See all News';
+  });
+
+  new Swiper('#news-swiper', {
+    loop: true,
+    autoplay: { delay: 6000, disableOnInteraction: false },
+    pagination: { el: '#news-swiper .swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '#news-swiper .swiper-button-next',
+      prevEl: '#news-swiper .swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 16
+  });
+})();
+</script>
+<!-- ===== End News Slider Script ===== -->
+
+<script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
+<script>
+
+const seedPages = [
+  'index.html','people.html','research.html','publications.html',
+  'podcast.html','openings.html','events.html','funding.html','githubrepo.html'
+];
+
+
+function discoverLinks() {
+  const base = location.origin + location.pathname.replace(/[^/]+$/, '');
+  return Array.from(document.querySelectorAll('a[href$=".html"]'))
+    .map(a => a.getAttribute('href'))
+    .filter(Boolean)
+    .map(h => h.startsWith('http') ? h : (h.startsWith('/') ? location.origin + h : base + h));
+}
+
+
+const PAGES = Array.from(new Set([
+  ...seedPages.map(p => (p.startsWith('http') ? p : (location.origin + '/' + p))),
+  ...discoverLinks()
+])).filter(u => new URL(u).origin === location.origin);
+
+
+let lunrIdx = null;
+let PAGE_DB  = {};   
+
+
+function extractMainText(doc) {
+  var clone = doc.cloneNode(true);
+  clone.querySelectorAll('script,style,noscript').forEach(function(el){ el.remove(); });
+  var main = clone.querySelector('#main') || clone.body || clone;
+  return (main.textContent || '').replace(/\s+/g, ' ').trim();
+}
+
+
+
+function makeSnippet(text, from, to, after = 50) {
+  const start = from;                        
+  const end   = Math.min(text.length, to + after);
+
+  const suffix = end < text.length ? ' …' : '';
+  return text.slice(start, end) + suffix;
+}
+
+
+function pickFragment(text, from, to) {
+ 
+  return text.slice(from, to).trim().slice(0, 80);
+}
+
+async function buildIndex() {
+  const docs = [];
+  for (const url of PAGES) {
+    try {
+      const res = await fetch(url, { cache: 'no-cache' });
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const title = (doc.querySelector('title')?.textContent || url).trim();
+      const content = extractMainText(doc);
+      const rec = { url, title, content };
+      PAGE_DB[url] = rec;
+      docs.push(rec);
+    } catch (_) { /* ignore fetch errors */ }
+  }
+
+  lunrIdx = lunr(function () {
+    this.ref('url');
+    this.field('title',  { boost: 5 });
+    this.field('content');
+    this.metadataWhitelist = ['position'];  
+    docs.forEach(d => this.add(d));
+  });
+}
+
+
+function renderResults(hits, query) {
+  const box = document.getElementById('search-results');
+  if (!hits.length) {
+    box.innerHTML = '<div class="alert alert-warning py-2 mb-0">No results found.</div>';
+    box.classList.remove('d-none');
+    return;
+  }
+
+
+  const cards = hits.map(hit => {
+    const rec = PAGE_DB[hit.ref];
+    if (!rec) return '';
+    const md = hit.matchData.metadata;
+
+
+    const positions = [];
+    Object.keys(md).forEach(term => {
+      const posList = md[term]?.content?.position || md[term]?.title?.position || [];
+      posList.forEach(p => positions.push(p)); 
+    });
+    positions.sort((a,b) => a[0] - b[0]);
+    const unique = positions.slice(0, 3);
+
+    const items = unique.map(p => {
+      const from = p[0], to = p[0] + p[1];
+      const snippet = makeSnippet(rec.content, from, to);
+      const fragmentText = pickFragment(rec.content, from, to);
+      let link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
+        if (rec.url.endsWith('index.html')) { link = rec.url + '#news'; }
+
+      return `
+        <div class="small mb-2">
+          <a href="${link}">${rec.title}</a>
+          <div class="text-muted">${rec.url.replace(location.origin + '/', '')}</div>
+          <div>${snippet.replace(/</g,'&lt;')}</div>
+        </div>`;
+    }).join('');
+
+    
+    return items || `
+      <div class="small mb-2">
+        <a href="${rec.url}">${rec.title}</a>
+        <div class="text-muted">${rec.url.replace(location.origin + '/', '')}</div>
+        <div>${(rec.content || '').slice(0, 180)}…</div>
+      </div>`;
+  }).join('');
+
+  box.innerHTML = `
+    <div class="card">
+      <div class="card-body py-3">
+        <div class="mb-2"><strong>Results for:</strong> ${query.replace(/</g,'&lt;')}</div>
+        ${cards}
+      </div>
+    </div>`;
+  box.classList.remove('d-none');
+
+  
+  const bar = document.getElementById('site-searchbar');
+  if (bar && bar.classList.contains('collapse')) bar.classList.add('show');
+}
+
+async function ensureIndex() {
+  if (!lunrIdx) await buildIndex();
+}
+
+document.getElementById('site-search-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const q = document.getElementById('site-search-input').value.trim();
+  if (!q) return;
+  await ensureIndex();
+ 
+  const results = lunrIdx.search(q);
+  renderResults(results, q);
+});
+</script>
+
+    
+
 </body>
 
 </html>
+
