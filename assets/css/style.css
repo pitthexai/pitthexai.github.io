@@ -1023,7 +1023,7 @@ section {
 
 .awards .awards-img img {
 
-  width: 75%;
+  width: 60%;
   height: auto;
   border-radius: 9px;
 }
@@ -2063,6 +2063,7 @@ a, p, li { word-break: break-word; }
     justify-content:center;
   }
 }
+
 
 
 
