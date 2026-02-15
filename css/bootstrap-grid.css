@@ -3895,5 +3895,12 @@ html {
   .mx-xl-auto {
     margin-left: auto !important;
   }
+
+  .logo-tagline {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
 }
 /*# sourceMappingURL=bootstrap-grid.css.map */
