@@ -219,4 +219,11 @@ margin-top: 10px;
 .video-player{
 	height: 220px;	
 }
+
+.logo-tagline {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
 }
