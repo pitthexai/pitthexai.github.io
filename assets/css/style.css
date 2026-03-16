@@ -2082,7 +2082,7 @@ a, p, li { word-break: break-word; }
   width:auto;
   height:auto;
   max-height:88px;
-  transition:all 0.3s ease;
+  transition:max-height 0.3s ease;
 }
 
 .logo-subtitle{
@@ -2100,7 +2100,8 @@ a, p, li { word-break: break-word; }
 }
 
 #header.fixed-top .logo-subtitle{
-  display:none;
+  font-size:11px;
+  margin-top:2px;
 }
 
 
