@@ -2081,7 +2081,7 @@ a, p, li { word-break: break-word; }
   display:block;
   width:auto;
   height:auto;
-  max-height:88px;
+  max-height:120px;
   transition:max-height 0.3s ease;
 }
 
@@ -2096,11 +2096,11 @@ a, p, li { word-break: break-word; }
 }
 
 #header.fixed-top .logo-img{
-  max-height:58px;
+  max-height:72px;
 }
 
 #header.fixed-top .logo-subtitle{
-  font-size:11px;
+  font-size:13px;
   margin-top:2px;
 }
 
