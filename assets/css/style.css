@@ -2078,15 +2078,15 @@ a, p, li { word-break: break-word; }
 }
 
 .logo-img{
-  width:220px;
+  width:280px;
   height:auto;
 }
 
 .logo-subtitle{
-  font-size:13px;
-  font-weight:600;
-  margin-top:4px;
-  letter-spacing:0.4px;
+  font-size:16px;
+  font-weight:700;
+  margin-top:5px;
+  letter-spacing:0.5px;
   color:#2c4964;
 }
 
