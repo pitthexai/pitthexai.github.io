@@ -1915,7 +1915,7 @@ section {
   color: #444444;
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   #header .logo img {
     max-height: 90px;
   }
@@ -1934,7 +1934,32 @@ section {
     text-align: center;
     padding: 2px 0;
   }
+} */
+
+
+@media (max-width: 991px) {
+  #header {
+    height: auto;
+    min-height: 110px;
+    padding: 10px 0;
+  }
+
+  #header .logo img,
+  .logo-img {
+    max-height: 78px;
+    width: auto;
+  }
+
+  .logo-subtitle {
+    font-size: 11px;
+    line-height: 1.2;
+    margin-top: 2px;
+    white-space: normal;
+  }
 }
+
+
+
 
 /* === News (Swiper) === */
 .news-swiper .swiper-slide { display: flex; }
