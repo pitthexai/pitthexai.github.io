@@ -2142,8 +2142,8 @@ a, p, li { word-break: break-word; }
 
 .hero-title-sub{
   margin: 2px 0 20px 0;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.2;
   color: #1f4e8c;
   font-family: "Roboto", sans-serif;
