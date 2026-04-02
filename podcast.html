@@ -1366,6 +1366,37 @@ document.getElementById('site-search-form').addEventListener('submit', async (e)
 });
 </script>
 
+
+
+
+  <script src="assets/js/main.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    const pageMap = {
+      "": "index",
+      "index.html": "index",
+      "research.html": "research",
+      "podcast.html": "podcast",
+      "people.html": "people"
+    };
+
+    const activePage = pageMap[currentPage];
+
+    document.querySelectorAll("#navbar a[data-page]").forEach(link => {
+      link.classList.remove("active");
+
+      if (link.dataset.page === activePage) {
+        link.classList.add("active");
+      }
+    });
+  });
+  </script>
+    
+
+
     
 
 </body>
