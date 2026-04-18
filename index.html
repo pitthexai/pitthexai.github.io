@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Pitt Health + Explainable AI (Pitt HexAI) Research Laboratory, Ahmad P. Tafti, University of Pittsburgh, Making Healthcare Better Through the Power of Explainable AI">
+    <meta name="keywords"
+          content="Ahmad P. Tafti, Ahmad Tafti, Ahmad Pahlavan Tafti, Pitt HexAI, Pitt HexAI Research Laboratory, University of Pittsburgh, health and explainable AI, Explainable AI, Total Joint Arthroplasty, AI in Healthcare, HexAI, Health and Explainable AI, Explainable, Interpretable, and Accountable AI, University of Pittsburgh">
+    <meta name="author" content="Ahmad P. Tafti, Ahmad Tafti, Ahmad Pahlavan Tafti">
+    <title>Pitt HexAI Research Laboratory | Ahmad P. Tafti</title>
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <link rel="canonical" href="https://pitthexai.github.io/"/>
+    <meta property="og:locale" content="en"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Pitt HexAI Research Laboratory | Ahmad P. Tafti"/>
+    <meta property="og:description"
+          content="Pitt Health + Explainable AI (Pitt HexAI) Research Laboratory, Ahmad P. Tafti, University of Pittsburgh, Making Healthcare Better Through the Power of Explainable AI"/>
+    <meta property="og:url" content="https://pitthexai.github.io/"/>
+    <meta property="og:site_name" content="Pitt HexAI Research Laboratory ,Ahmad Pahlavan Tafti"/>
+    <meta property="og:image" content="https://pitthexai.github.io/assets/img/Pitthexai_logo_sq.png"/>
+    <meta property="og:image:secure_url" content="https://pitthexai.github.io/assets/img/Pitthexai_logo_sq.png"/>
+    <meta property="og:image:width" content="500"/>
+    <meta property="og:image:height" content="500"/>
+    <meta property="og:image:alt" content="Pitt HexAI Research Laboratory"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Pitt HexAI Research Laboratory | Ahmad P. Tafti"/>
+    <meta name="twitter:description"
+          content="Pitt Health + Explainable AI (Pitt HexAI) Research Laboratory, Ahmad P. Tafti, University of Pittsburgh, Making Healthcare Better Through the Power of Explainable AI"/>
+    <meta name="twitter:image" content="https://pitthexai.github.io/assets/img/Pitthexai_logo_sq.png"/>
+
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- =======================================================
+    * Template Name: BizLand - v3.9.1
+    * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
+
+</head>
+
+<body>
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="social-links d-none d-md-flex align-items-center">
+        </div>
+        <div class="contact-info d-flex align-items-center ">
+            <a href="https://www.pitt.edu/" target="_blank" class="text-light">University of Pittsburgh</a>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-flex-start">
+        <!-- <h1 class="logo"><a href="index.html"><img src="assets/img/Pitthexai_logo.png" class="logo"></a></h1> -->
+        <!-- <h4>AI for Musculoskeletal Care</h4> -->
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="assets/img/Pitthexai_logo.png" class="logo-img" alt="Pitt HexAI Logo">
+            <span class="logo-subtitle">AI for Musculoskeletal Care</span>
+          </a>
+        </h1>
+
+        
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="index.html" data-page="index"><i class="bx bx-home"></i> Home</a></li>
+                <li><a class="nav-link scrollto" href="research.html" data-page="research"><i class="bx bx-search"></i> Research Projects</a></li>
+                <li><a class="nav-link scrollto" href="https://scholar.google.com/citations?user=NxeXUqwAAAAJ&hl=en" target="_blank" rel="noopener" data-page="publications"><i class="bi bi-journal-text"></i> Publications</a></li>
+                <li><a class="nav-link scrollto" href="podcast.html" data-page="podcast"><i class="bi bi-broadcast-pin"></i>HexAI Podcast</a></li>
+                <li><a class="nav-link scrollto" href="https://pitthexai.github.io/AISummerSchool/" target="_blank" rel="noopener" data-page="summer"><i class="bx bxs-bank"></i> AI Summer School</a></li>
+                <li><a class="nav-link scrollto" href="people.html" data-page="people"><i class="bi bi-people-fill"></i> Team </a></li>
+                <!-- <li><a class="nav-link scrollto" href="research.html"><i class="bx bx-book"></i> Projects</a></li> -->
+                
+                <!-- <li><a class="nav-link scrollto" href="https://github.com/pitthexai/" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a></li> -->
+
+
+                <!-- ======= Search toggle button in navbar ========= -->
+                <li class="ml-1 d-inline-block push-right">
+                  <a class="nav-link p-0" href="https://www.linkedin.com/in/ahmadtafti/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+                </li>
+                
+                <li class="ml-1 d-inline-block">
+                  <a class="nav-link p-0" href="https://www.youtube.com/@user-xb1ti1jp4e" target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </li>
+                
+                <li class="ml-1 d-inline-block">
+                  <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#site-searchbar" aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </li> 
+
+               
+                <!--<button class="btn btn-sm btn-outline-primary ml-2"
+                        type="button" data-toggle="collapse" data-target="#site-searchbar"
+                        aria-controls="site-searchbar" aria-expanded="false" aria-label="Toggle search">
+                  <i class="bi bi-search"></i>
+                </button>
+
+                <li class="ml-1 d-inline-block">
+                  <a class="nav-link p-0" href="https://www.linkedin.com/in/ahmadtafti/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+                </li>
+                <li class="ml-1 d-inline-block">
+                  <a class="nav-link p-0" href="https://www.youtube.com/@user-xb1ti1jp4e" target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </li> -->
+
+
+        <!--  
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="bx bx-search"></i> Research
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="nav-link scrollto nav-link-sub-items dropdown-item" href="research.html"><i
+                                class="bx bx-book"></i>
+                            Projects</a>
+                        <a class="nav-link scrollto nav-link-sub-items dropdown-item" href="publications.html"><i
+                                class="bx bx-book"></i>
+                            Publications</a>
+                        <a class="nav-link scrollto nav-link-sub-items dropdown-item" href="openings.html"><i
+                                class="bx bx-bookmark-alt-plus"></i>
+                            Openings</a>
+                        <a class="nav-link scrollto nav-link-sub-items dropdown-item" href="githubrepo.html"><i
+                                class="bi bi-github"></i> GitHub Repositories</a>
+                    </div>
+                </li>
+                -->
+            </ul>
+            
+         <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        
+          
+    </div>
+     
+ </header><!-- End Header -->
+
+
+<!-- ======== Collapsible site search bar ========= -->
+<div id="site-searchbar" class="collapse bg-light border-bottom">
+  <div class="container py-2 d-flex flex-column align-items-start justify-content-start">
+    <form id="site-search-form" class="form-inline my-1 w-100" role="search" autocomplete="off">
+      <input id="site-search-input" 
+             type="search" 
+             class="form-control form-control-sm mr-2 flex-grow-1" 
+             placeholder="Search this site…" 
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <button class="btn btn-sm btn-primary" type="submit">
+        <i class="bi bi-search"></i> Search
+      </button>
+    </form>
+
+    <div id="search-results" class="container d-none my-2"></div>
+
+
+  </div>
+</div>
+
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <!--<h1>Pitt Health + Explainable AI (Pitt HexAI) Research Laboratory</h1>-->
+        <h1 class="hero-title-main">Pitt Health + Explainable AI (Pitt HexAI) Research Laboratory</h1>
+        <h2 class="hero-title-sub"><strong>AI for Musculoskeletal Care</strong></h2>
+
+
+        <div class="testimonials-slider swiper textinslider" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <h2>Building Explainable and Responsible AI in Healthcare Systems</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <!--<h2>Making Healthcare Better Through the Power of Explainable AI</h2>-->
+                        <h2>Advancing Musculoskeletal Care with Explainable AI</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <h2>Augmenting AI Explainability, Interpretability, and Accountability in Healthcare</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <h2>Exploring How Explainable and Responsible AI Impacts Our Healthcare Community</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <h2>Examining How to Handle Bias Issues in AI-Powered Healthcare</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <h2>Sharing Best Practices in Explainable AI and Interpretable Models</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item mt-3">
+                        <h2>Evaluating and Generalizing Interpretable AI Models in Healthcare</h2>
+                    </div>
+                </div><!-- End testimonial item -->
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+
+
+            <div class="row">
+                <div class="col-md-5 text-center" data-aos="fade-right" data-aos-delay="100">
+                    <img src="assets/img/pitthexai_ahmadptafti.JPG" class="rounded fetch-img" alt="Ahmad P. Tafti, PhD"
+                         style="max-width:500px">
+                    <p><br><a href="https://aptafti.github.io/index.html" target="_blan">
+                        <h4>Ahmad P. Tafti, PhD, FAMIA</h4>
+                    </a>
+                        <strong>Director, <a href="https://pitthexai.github.io">Pitt HexAI Research Laboratory</a></strong></br>
+                        
+                        <strong>Director of Scientific Affairs, <a href="https://www.path.pitt.edu/divisions/computational-pathology-informatics/computational-pathology-ai-center-excellence">CPACE</a></strong></br>
+                        <strong>Director, <a href="https://www.youtube.com/@user-xb1ti1jp4e/podcasts" target="_blan">HexAI Podcast</a></strong></br>
+                        <strong>Federal Grant Review Panelist</strong>
+
+                    </p>
+                </div>
+                <div class="col-md-7 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
+                     data-aos-delay="100">
+                    <p>The <strong> Pitt Health + Explainable AI (Pitt HexAI)</strong> Research Laboratory at the
+                        University of
+                        Pittsburgh, led by <a href="https://aptafti.github.io" target="_blank">Ahmad P. Tafti</a>, has a
+                        simple
+                        goal: to make healthcare better through the power of explainable artificial intelligence (AI).
+                        From
+                        computational perspective, our research focuses on engineering, implementing, validating, and
+                        deploying
+                        cutting-edge fundamental and applied explainable AI algorithms, and promote their applications
+                        in
+                        healthcare problems.
+                        We attempt to answer three main questions: 1) how advanced explainable AI strategies are
+                        developing in
+                        healthcare, 2) how they shape healthcare systems, and 3) how they impact the healthcare
+                        community. From
+                        clinical perspective, our research agenda spans musculoskeletal diseases and disorders (e.g.,
+                        TJA), computational orthopedics, and computational pathology. </p>
+
+                    <p> The Pitt HexAI Research Laboratory is functioning in the <a href="https://www.shrs.pitt.edu/him"
+                                                                                    target="_blank">Department of Health
+                        Information Management</a> at the <a
+                            href="https://www.shrs.pitt.edu/" target="_blank">School of Health and Rehabilitation
+                        Sciences</a>. Our
+                        group at Pitt HexAI is a multidisciplinary team, and it benefits from several extramural
+                        collaborations
+                        with other academic institutions, nationwide and worldwide. Moreover, our group aims to provide
+                        highest
+                        quality education and research experience in AI-powered health informatics at all levels from
+                        K-12 to
+                        undergraduate to graduate and postdoctoral levels.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        
+        
+    </section><!-- End About Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3>Research Interests</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 "></div>
+
+                <div class="col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-cog"></i></div>
+                        <h4><a href="#">Technical</a></h4>
+                        <p>Trustworthy and Explainable AI</p>
+                        <p>Resposnsible and Ethical-by-Design AI</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-clinic"></i></div>
+                        <h4><a href="#">Clinical</a></h4>
+                        <p>Musculoskeletal Diseases and Disorders</p>
+                        <p>Computational Orthopedics</p>
+                       
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 "></div>
+
+            </div>
+
+        </div>
+
+        <style>
+        /* Optional: Centering the video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 560px;
+            height: 315px;
+            border: none;
+        }
+    </style>
+
+    <div class="video-container">
+        <!-- Embed code from YouTube -->
+        <iframe src="https://www.youtube.com/embed/z4LhPvBxFxE?si=K1HrLWeuKHbZri5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= News Section ======= -->
+
+    <section id="news" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h3>Recent News</h3>
+    </div>
+
+
+      
+    <div class="row justify-content-center mt-4">
+      <div class="col-xl-10">
+
+        <!-- Slider wrapper -->
+        <div id="news-swiper" class="swiper news-swiper">
+            <div class="swiper-wrapper">
+            </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+       
+        <div class="text-right mt-2">
+          <a id="see-all-news" href="#" class="btn btn-link p-0">See all News 2022 – 2025</a>
+        </div>
+
+        <!-- Full archive (hidden by default) -->
+        <ul id="news-archive" class="news-ul" style="display:none">
+
+
+
+            <!-- ===== 2026 ===== -->
+
+            <li>
+              <strong>April 2026:</strong>
+              Pitt HexAI Podcast Episode #39 featuring Dr. George Demiris, PhD, FACMI is now available on all major podcast platforms.
+              <a href="https://pitthexai.github.io/podcast.html" target="_blank" rel="noopener">
+                HexAI Podcast
+              </a>.
+            </li>
+
+
+            
+            <li>
+                <strong>April 2026:</strong> Our team will present three research contributions at the 
+                <a href="https://biomedicalimaging.org/2026/" target="_blank" rel="noopener">
+                IEEE International Symposium on Biomedical Imaging (ISBI 2026)</a> in London, UK (April 8–11, 2026).
+            </li>
+
+            <li>
+                <strong>March 2026:</strong> Dr. Jacob Mathew will serve as a keynote presenter and panelist at the <a href="https://eventsema.com/" target="_blank" rel="noopener">
+                62nd Annual Medical Conference and International Health Exhibition</a> in Addis Ababa, Ethiopia (March 27–28, 2026). His talk, "Learning to Lead",
+                will be featured in the panel "AI in Academic Medicine: Leveraging Artificial Intelligence to Accelerate Scientific Discovery and Transform Medical Education".
+            </li>
+
+            <li>
+              <strong>March 2026:</strong>
+              Pitt HexAI Podcast Episode #38 featuring Martin Raison, MSc is now available on all major podcast platforms.
+              <a href="https://pitthexai.github.io/podcast.html" target="_blank" rel="noopener">
+                HexAI Podcast
+              </a>.
+            </li>
+
+
+            <li><strong>March 2026:</strong>
+                <strong>Hiring:</strong> Research Assistant position available in the HexAI Lab at the University of Pittsburgh for AI-driven medical imaging research.
+                <a href="https://cfopitt.taleo.net/careersection/pitt_student_int/jobdetail.ftl?job=26001192" target="_blank" rel="noopener"> Apply here</a>.
+            </li>
+
+            <li><strong>March 2026:</strong>
+                The <em>AI Summer School – Medical Imaging Informatics</em> will be held at the University of Pittsburgh (June 8–12, 2026).
+                This free one-week program introduces high school students to the exciting world of AI in medical imaging, including Python programming, CNNs and U-Net, and hands-on medical image analysis, 
+                with guest lectures from leading researchers in academia and industry.
+                <a href="https://pitthexai.github.io/AISummerSchool/" target="_blank" rel="noopener">Learn more & register</a>.
+            </li>
+
+            <li><strong>Feb. 2026:</strong> 
+              The paper 
+              <em>"KneeXNet-2.5D: a clinically-oriented and explainable deep learning framework for MRI-based knee cartilage and meniscus segmentation"</em> 
+              by Maimouna S. and colleagues has been published in 
+              <a href="https://www.nature.com/npjhealthsystems/" target="_blank" rel="noopener">
+                npj Health Systems
+              </a>.
+            </li>
+
+            <li><strong>Feb. 2026:</strong> 
+              The abstract 
+              <em>"An Explainable Age- and Sex-Aware Contrastive Artificial Intelligence Framework for Knee Osteoarthritis Classification"</em> 
+              by Fengyi Gao and colleagues has been accepted at the 
+              <a href="https://biomedicalimaging.org/2026/" target="_blank" rel="noopener">
+                IEEE International Symposium on Biomedical Imaging (ISBI 2026)
+              </a>, London, UK.
+            </li>
+
+
+            
+            <li><strong>Feb. 2026:</strong> 
+              The abstract 
+              <em>"Prompt-Constrained Vision–Language Models for Zero-Shot Orthopedic Pathology Recognition"</em> 
+              by Farnaz Rezvani and colleagues has been accepted at the 
+              <a href="https://biomedicalimaging.org/2026/" target="_blank" rel="noopener">
+                IEEE International Symposium on Biomedical Imaging (ISBI 2026)
+              </a>, London, UK.
+            </li>
+
+
+            <li>
+              <strong>Feb. 2026:</strong>
+              Pitt HexAI Podcast Episode #37 featuring Ekaterine Kldiashvili, PhD is now available on all major podcast platforms.
+              <a href="https://pitthexai.github.io/podcast.html" target="_blank" rel="noopener">
+                HexAI Podcast
+              </a>.
+            </li>
+
+            
+
+            <li>
+                <strong>Jan. 2026:</strong>
+                Recent contributions on 2.5D knee MRI segmentation using explainable and uncertainty-aware AI were presented at the Pittsburgh ACL Research Retreat, in collaboration with the
+                <a href="https://www.orthonet.pitt.edu/" target="_blank" rel="noopener">
+                    Department of Orthopaedics, University of Pittsburgh–UPMC
+                </a>,
+                    within the field of sports medicine, including
+                <a href="https://providers.upmc.com/provider/ting-cong/3153930" target="_blank" rel="noopener">Dr. Tring Cong</a>,
+                <a href="https://www.shrs.pitt.edu/person/james-irrgang/" target="_blank" rel="noopener">Dr. James Irrgang</a>,
+                <a href="https://www.shrs.pitt.edu/person/will-pitt/" target="_blank" rel="noopener">Dr. Will Pitt</a>, and
+                <a href="https://providers.upmc.com/provider/volker-musahl/1326823" target="_blank" rel="noopener">Dr. Volker Musahl</a>.
+                <a href="https://www.linkedin.com/company/90633031/admin/page-posts/published/" target="_blank" rel="noopener">
+                    Pitt HexAI
+                </a>.
+            </li>
+
+
+            
+          <!-- ===== 2025 ===== -->
+
+            <li>
+              <strong>Dec. 2025:</strong>
+              Our Pitt HexAI podcast episode featuring Richard Bonneau, PhD is now available on all major podcast platforms.
+              <a href="https://pitthexai.github.io/podcast.html" target="_blank" rel="noopener">
+                HexAI Podcast
+              </a>.
+            </li>
+
+            <li><strong>Dec. 2025:</strong>
+              Jason Guattery, our PhD student at the University of Pittsburgh School of Health and Rehabilitation Sciences,
+              published a paper, entitled
+              <a href="https://link.springer.com/article/10.1186/s12891-025-09301-8"
+                 target="_blank"
+                 rel="noopener"
+                 class="text-decoration-none">
+                <em>"Explainable Machine Learning to Predict Prolonged Post-Operative Opioid Use in Rotator Cuff Patients"</em>
+              </a>
+              in BMC Musculoskeletal Disorders.
+            </li>
+
+                
+
+            <li><strong>Dec. 2025:</strong>
+              Ahmad P. Tafti has received a research grant from
+              <a href="https://www.pittsburghcuresarcoma.org/" target="_blank" rel="noopener">
+                Pittsburgh Cure Sarcoma (PCS)
+              </a>
+              as the sole Principal Investigator (PI) for the research project,
+              <em>
+                "Explainable and Uncertainty-Aware AI to Predict Response to Therapy in Adult and Pediatric Sarcomas".
+              </em>
+              Thanks to PCS for supporting our research project.
+            </li>
+
+
+            <li><strong>Dec. 2025:</strong> 
+                Fengyi Gao, Nickolas Littlefield, and Nicole Myers have had their paper,  
+              <a href="https://ieeexplore.ieee.org/document/11252884" target="_blank" class="text-decoration-none">
+                <em>"Explainable Contrastive Learning for KL Grading Classification in Knee Osteoarthriti"</em>,
+              </a> 
+              published at the 
+              <a href="https://embc.embs.org/2025" target="_blank" rel="noopener">IEEE EMBC 2025</a> 
+              conference.
+            </li>
+
+
+            
+           <li><strong>Nov. 2025:</strong> Ahmad P. Tafti, PhD, is serving as a speaker at 
+              <a href="https://tma.edu.ge/medic2025" target="_blank" rel="noopener">MEDIC 2025</a> 
+              in Tbilisi, Georgia.
+            </li>
+            
+            
+            <li><strong>Nov. 2025:</strong> The podcast episode featuring Dennis Wei, PhD is now available on all major podcast platforms. 
+              <a href="https://pitthexai.github.io/podcast.html" target="_blank" rel="noopener">HexAI Podcast</a>.
+            </li>
+
+
+            <li><strong>Nov. 2025:</strong> Our team presented two works at 
+              <a href="https://amia.org" target="_blank" rel="noopener">AMIA 2025</a>.
+            </li>
+            
+            
+          <li><strong>Oct. 2025:</strong> 
+            <a href="https://www.orthonet.pitt.edu/people/adolph-j-yates-jr-md" target="_blank" rel="noopener">Dr. Yates</a>
+            (a member of our advisory board at Pitt HexAI) now serves as the Chair for BOS (Board of Specialty Societies), which includes a seat on the AAOS (American Academy of Orthopaedic Surgeons) Board of Directors.
+          </li>
+
+          <li><strong>Oct. 2025:</strong> Ahmad will serve as a panelist at
+            <a href="https://www.advancingprecisionmedicine.com/apm-home/apm-annual-conference-and-exhibition-in-philadelphia/speakers-2025/" target="_blank" rel="noopener">
+              Advancing Precision Medicine Conference
+            </a>, 2025.
+          </li>
+
+          <li><strong>Sep. 2025:</strong> We have one paper and a tutorial accepted at
+            <a href="https://www.isvc.net" target="_blank" rel="noopener">ISVC 2025</a>.
+          </li>
+
+          <li><strong>Sep. 2025:</strong> Ahmad will give a talk at
+            <a href="https://hl7.my.site.com/LightningMemberPortal/s/lt-event?id=a1YVM00000B2wXq2AJ&utm_campaign=14002607-Sept%202025%20WGM%20Pittsburgh%20Sept%2013-19&utm_content=340538988&utm_medium=social&utm_source=linkedin&hss_channel=lcp-115482#/Plenary-Meeting" target="_blank" rel="noopener">
+              39th Annual Plenary, Working Group Meeting and HL7 FHIR Connectathon
+            </a>.
+          </li>
+
+          <li><strong>Jul. 2025:</strong> We have one contribution accepted at 
+            <a href="https://congress-registration1.org/rsna2025/?gad_source=1&gad_campaignid=22997873748&gbraid=0AAAABAIE4qLgY1zSb9Q2G4-R7lXjLbNlv&gclid=Cj0KCQjw9czHBhCyARIsAFZlN8SMXbC8zMaP-q2eZelyqclSiRqH29oPt8awYxHa09C3TAxw-pcxY7caArs5EALw_wcB" target="_blank" rel="noopener">
+              RSNA 2025
+            </a>.
+          </li>
+
+          <li><strong>Jun. 2025:</strong> We have two contributions accepted at 
+            <a href="https://amia.org/education-events/amia-2025-annual-symposium" target="_blank" rel="noopener">
+              AMIA 2025 Annual Symposium
+            </a>.
+          </li>
+
+          <li><strong>Mar. 2025:</strong> Ahmad will be giving a talk on "Uncertainty-Aware Explainable AI for Medical Imaging" at the 
+            <a href="https://www.fsu.edu/" target="_blank" rel="noopener">School of information, Florida State University</a>, US.
+          </li>
+
+          <li><strong>Mar. 2025:</strong> Ahmad will be giving a talk on "Trustworthy AI in Orthopedic Imaging", and will be exploring collaboration at 
+            <a href="https://www.abdn.ac.uk/events/22131/" target="_blank" rel="noopener">University of Aberdeen</a>, Scotland.
+          </li>
+
+          <li><strong>Feb. 2025:</strong> We are organizing 
+            <a href="https://www.pittaihealthcareresearchsymposium.org/" target="_blank" rel="noopener">Pitt AI in Healthcare Research Symposium</a>, US. Please join us!
+          </li>
+
+          <li><strong>Feb. 2025:</strong> Ahmad is serving as a PC member at 
+            <a href="https://clpsych.org/" target="_blank" rel="noopener">Workshop on Computational Linguistics and Clinical Psychology</a>, US.
+          </li>
+
+          <li><strong>Feb. 2025:</strong> We are honored to provide research mentoring services to three very talented students at 
+            <a href="https://airesponsibly.net/RAIforUkraine/" target="_blank" rel="noopener">RAI for Ukraine at NYU</a>, US.
+          </li>
+
+          <li><strong>Feb. 2025:</strong> Our fair and explainable ML on cancer survival analysis is now out at 
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1386505625000395" target="_blank" rel="noopener">International Journal of Medical Informatics</a>.
+          </li>
+
+          <li><strong>Jan. 2025:</strong> Our grant application (serving as the PI) on AI for Sarcoma was officially funded by 
+            <a href="https://www.pittsburghcuresarcoma.org/" target="_blank" rel="noopener">Pittsburgh Cure Sarcoma</a>, US.
+          </li>
+
+          <li><strong>Jan. 2025:</strong> Ahmad is serving in the Organization Committee of 
+            <a href="https://conferences.computer.org/chase2025/workshop_ref_ai.html" target="_blank" rel="noopener">REF-AI for Medical Imaging Informatics Workshop</a>, US.
+          </li>
+
+          <li><strong>Jan. 2025:</strong> Serving as the Tutorial Chair(s) at 
+            <a href="https://events.dimes.unical.it/ichi2025/" target="_blank" rel="noopener">IEEE ICHI 2025</a>, Italy.
+          </li>
+
+          <!-- ===== 2024 ===== -->
+          <li><strong>Oct. 2024:</strong> Ahmad is serving as the Tutorial Chair(s) at 
+            <a href="https://events.dimes.unical.it/ichi2025/" target="_blank" rel="noopener">IEEE ICHI 2025</a>.
+          </li>
+
+          <li><strong>Sep. 2024:</strong> Ahmad will give a talk on AI Explainability in Healthcare at the 
+            <a href="https://www.wphima.org/" target="_blank" rel="noopener">WPHIMA</a>. You may register 
+            <a href="https://www.elearningconnex.com/courses/wphima-introduction-to-explainable-ai-and-its-application-in-healthcare/" target="_blank" rel="noopener">here</a>!
+          </li>
+
+          <li><strong>Sep. 2024:</strong> Ahmad is giving a talk at the 
+            <a href="https://www.airmeet.com/e/99f49e20-27f9-11ef-82cf-15ca50acf45f" target="_blank" rel="noopener">CCC Conference</a> organized by OHRP within the U.S. Department of Health and Human Services.
+          </li>
+
+          <li><strong>Sep. 2024:</strong> Our Generative AI in Orthopedics paper has been published by 
+            <a href="https://academic.oup.com/jamia/article-abstract/31/11/2668/7765642" target="_blank" rel="noopener">JAMIA</a>.
+          </li>
+
+          <li><strong>Aug. 2024:</strong> Our Knee ROM paper has been published at the 
+            <a href="https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2388-0812" target="_blank" rel="noopener">Journal of Knee Surgery</a>.
+          </li>
+
+          <li><strong>Aug. 2024:</strong> Ahmad has been appointed to the Journals and Publications Committee for the 2024-2025 term at 
+            <a href="https://amia.org/about-amia/leadership-and-governance/committees/journals-and-publications-committee" target="_blank" rel="noopener">AMIA</a>.
+          </li>
+
+          <li><strong>Jul. 2024:</strong> Our Nature-Scientific Reports paper on 
+            <a href="https://www.nature.com/articles/s41598-024-66873-6" target="_blank" rel="noopener">Fair AI-powered orthopedic image segmentation</a> is out now.
+          </li>
+
+          <li><strong>Jun. 2024:</strong> We are organizing 
+            <a href="https://pitthexai.github.io/AISummerSchool" target="_blank" rel="noopener">AI Summer School in Medical Imaging Informatics</a>.
+          </li>
+
+          <li><strong>May. 2024:</strong> We got two papers accepted at 
+            <a href="https://conferences.miccai.org/2024/en/" target="_blank" rel="noopener">MICCAI 2024</a>.
+          </li>
+
+          <li><strong>Feb. 2024:</strong> Serving as a session chair of "Advances in Image Classification" at 
+            <a href="https://amia.org/education-events/amia-2024-informatics-summit" target="_blank" rel="noopener">AMIA 2024 Informatics Summit</a>.
+          </li>
+
+          <li><strong>Jan. 2024:</strong> Serving as a PC member at 
+            <a href="https://aime24.aimedicine.info/" target="_blank" rel="noopener">AIME 2024</a>, hosted by the University of Utah.
+          </li>
+
+          <!-- ===== 2023 ===== -->
+          <li><strong>Dec. 2023:</strong> Have a podium abstract accepted at 
+            <a href="https://amia.org/education-events/amia-2024-informatics-summit" target="_blank" rel="noopener">AMIA 2024 Informatics Summit</a>.
+          </li>
+
+          <li><strong>Nov. 2023:</strong> Zoe Menezes and Avani Chhabra are now at 
+            <a href="https://www.shrs.pitt.edu/news/health-informatics-students-present-paper-ieee-embs-international-conference" target="_blank" rel="noopener">SHRS Blog</a>.
+          </li>
+
+          <li><strong>Oct. 2023:</strong> Our HexAI-TJAtxt paper/dataset is now published at 
+            <a href="https://www.sciencedirect.com/science/article/pii/S2352340923008077" target="_blank" rel="noopener">Data in Brief</a>.
+          </li>
+
+          <li><strong>Sep. 2023:</strong> Serving as a Program Committee member at 
+            <a href="https://amia.org/education-events/amia-2024-informatics-summit" target="_blank" rel="noopener">AMIA 2024 Informatics Summit</a>.
+          </li>
+
+          <li><strong>Sep. 2023:</strong> We were awarded 
+            <a href="https://blogs.oracle.com/research/post/and-the-winner-of-the-oracle-eureka-award-2023-is" target="_blank" rel="noopener">Oracle Excellence Eureka Award 2023</a>.
+          </li>
+
+          <li><strong>Sep. 2023:</strong> Serving as the Industry Track Chair at 
+            <a href="https://ieeeichi2024.github.io/committees.html" target="_blank" rel="noopener">IEEE ICHI 2024</a>.
+          </li>
+
+          <li><strong>Jul. 2023:</strong> Have a work accepted at 
+            <a href="https://bhi.embs.org/2023/" target="_blank" rel="noopener">IEEE BHI 2023</a>.
+          </li>
+
+          <li><strong>Jul. 2023:</strong> Have a work accepted at 
+            <a href="https://amia.org/education-events/amia-2023-annual-symposium" target="_blank" rel="noopener">AMIA Annual Symposium 2023</a>.
+          </li>
+
+          <li><strong>Jun. 2023:</strong> Our 
+            <a href="https://pittnail.github.io/EBAIC/" target="_blank" rel="noopener">EBAIC 2023</a> GitHub repository is now publicly and freely available 
+            <a href="https://github.com/pitthexai/ICHI2023_EBAIC" target="_blank" rel="noopener">here</a>!
+          </li>
+
+          <li><strong>Jun. 2023:</strong> Pitt HexAI is organizing a free 
+            <a href="https://events.vtools.ieee.org/m/362022" target="_blank" rel="noopener">Mini Summer Camp in AI</a>. Target audiences are High School Students (grades 11 & 12).
+          </li>
+
+          <li><strong>Jun. 2023:</strong> Ahmad P. Tafti has been invited as a keynote speaker and panelist at 
+            <a href="https://www.cmu.edu/ethics-ai/agenda/index.html" target="_blank" rel="noopener">CMU- K&L Gates Conference in Ethics and AI</a>, organized by 
+            <a href="https://www.cmu.edu" target="_blank" rel="noopener">Carnegie Mellon University</a>. Join us, please!
+          </li>
+
+          <li><strong>Apr. 2023:</strong> Ahmad P. Tafti has been invited as a keynote speaker at 
+            <a href="https://www.orthonet.pitt.edu/event/orthopaedic-surgery-research-retreat" target="_blank" rel="noopener">Pitt's Orthopaedic Surgery Research Retreat</a>. Please, join us!
+          </li>
+
+          <li><strong>Apr. 2023:</strong> Ahmad P. Tafti has been invited as a keynote speaker at 
+            <a href="https://sites.google.com/view/rainscmu" target="_blank" rel="noopener">Responsible AI in the Natural Sciences</a>, organized by 
+            <a href="https://www.cmu.edu" target="_blank" rel="noopener">Carnegie Mellon University</a>. Join us, please!
+          </li>
+
+          <li><strong>Apr. 2023:</strong> Have two more works accepted at 
+            <a href="https://ieeeichi.github.io/ICHI2023/" target="_blank" rel="noopener">IEEE ICHI 2023</a>. Kudos to Nick, Tina, Isameel, Avani, Zoe, and Annie!
+          </li>
+
+          <li><strong>Mar. 2023:</strong> Pitt HexAI has submitted two podium abstracts at 
+            <a href="https://amia.org/education-events/amia-2023-annual-symposium" target="_blank" rel="noopener">AMIA 2023 Annual Symposium</a>. Kudos to Nick and Tina!
+          </li>
+
+          <li><strong>Mar. 2023:</strong> Our work on explainable deep few-shot learning has been accepted as a full-paper at 
+            <a href="https://ieeeichi.github.io/ICHI2023/" target="_blank" rel="noopener">IEEE ICHI 2023</a>. Kudos to Nick!
+          </li>
+
+          <li><strong>Mar. 2023:</strong> We are delighted and honored to have Prof. 
+            <a href="https://www.orthonet.pitt.edu/people/ines-lohse-phd" target="_blank" rel="noopener">Ines Lohse, PhD</a> join us as our Associate Director. Welcome, Ines!
+          </li>
+
+          <li><strong>Mar. 2023:</strong> Our lab has started launching 
+            <a href="https://podcasters.spotify.com/pod/show/hexailab" target="_blank" rel="noopener">Health and Explainable AI Podcast</a> series.
+          </li>
+
+          <li><strong>Feb. 2023:</strong> Our lab is happy to participate at the 
+            <a href="https://web.cvent.com/event/8071b458-dcec-406d-9a52-5100e0e1ba4c/summary" target="_blank" rel="noopener">3rd Annual Deep Learning Workshop presented by The OSCT at Marquette University</a>.
+          </li>
+
+          <li><strong>Feb. 2023:</strong> Annie's work on primary total shoulder arthroplasty has been accepted at 
+            <a href="https://medinfo2023.org/" target="_blank" rel="noopener">MedInfo 2023</a>. Thank you, Annie!
+          </li>
+
+          <li><strong>Jan. 2023:</strong> We were awarded 
+            <a href="https://www.oracle.com/research" target="_blank" rel="noopener">Oracle for Research Award</a>. Thank you, Oracle!
+          </li>
+
+          <li><strong>Jan. 2023:</strong> We were awarded 
+            <a href="https://ctsi.pitt.edu" target="_blank" rel="noopener">University of Pittsburgh CTSI Award</a>. Thank you, Pitt CTSI!
+          </li>
+
+          <li><strong>Jan. 2023:</strong> Have an accepted workshop on Ethics and Bias of AI in Clinical Applications at 
+            <a href="https://ieeeichi.github.io/ICHI2023" target="_blank" rel="noopener">IEEE ICHI 2023</a>.
+          </li>
+
+          <!-- ===== 2022 ===== -->
+          <li><strong>Nov. 2022:</strong> We've submitted a student abstract/poster at 
+            <a href="https://medinfo2023.org" target="_blank" rel="noopener">MedInfo 2023</a>.
+          </li>
+
+          <li><strong>Sep. 2022:</strong> We've submitted an abstract at 
+            <a href="https://amia.org/education-events/amia-2023-informatics-summit" target="_blank" rel="noopener">AMIA 2023 Informatics Summit</a>.
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    
+    <!--<section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3>News</h3>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-xl-10">
+                    <div class="row">
+
+                        <div class="col-md-12 d-flex align-items-stretch " data-aos="fade-up" data-aos-delay="100">
+                            <ul class="news-ul">
+            <li><strong>Oct. 2025:</strong> 
+              <a href="https://www.orthonet.pitt.edu/people/adolph-j-yates-jr-md" target="_blank" rel="noopener">
+                Dr. Yates
+              </a>
+              (a member of our advisory board at Pitt HexAI) now serves as the Chair for BOS (Board of Specialty Societies), which includes a seat on the AAOS (American Academy of Orthopaedic Surgeons) Board of Directors.
+            </li>
+
+            <li><strong>Oct. 2025:</strong> Ahmad will serve as a panelist at
+               <a
+                        href="https://www.advancingprecisionmedicine.com/apm-home/apm-annual-conference-and-exhibition-in-philadelphia/speakers-2025/"
+                        target="_blank">Advancing Precision Medicine Conference</a>, 2025.
+
+            </li>
+
+            <li><strong>Sep. 2025:</strong> We have one paper and a tutorial accepted at
+               <a
+                        href="https://www.isvc.net"
+                        target="_blank">ISVC 2025</a>.
+
+            </li>
+            
+            <li><strong>Sep. 2025:</strong> Ahmad will give a talk at
+               <a
+                        href="https://hl7.my.site.com/LightningMemberPortal/s/lt-event?id=a1YVM00000B2wXq2AJ&utm_campaign=14002607-Sept%202025%20WGM%20Pittsburgh%20Sept%2013-19&utm_content=340538988&utm_medium=social&utm_source=linkedin&hss_channel=lcp-115482#/Plenary-Meeting"
+                        target="_blank">39th Annual Plenary, Working Group Meeting and HL7 FHIR Connectathon</a>.
+
+            </li>
+
+            <li><strong>Jul. 2025:</strong> We have one contribution accepted at <a
+                    href="https://congress-registration1.org/rsna2025/?gad_source=1&gad_campaignid=22997873748&gbraid=0AAAABAIE4qLgY1zSb9Q2G4-R7lXjLbNlv&gclid=Cj0KCQjw9czHBhCyARIsAFZlN8SMXbC8zMaP-q2eZelyqclSiRqH29oPt8awYxHa09C3TAxw-pcxY7caArs5EALw_wcB" target="_blank">RSNA 2025</a>.
+            </li>
+
+             <li><strong>Jun. 2025:</strong> We have two contributions accepted at <a
+                    href="https://amia.org/education-events/amia-2025-annual-symposium" target="_blank">AMIA 2025 Annual Symposium</a>.
+            </li>
+
+
+                               <li><strong>Mar. 2025:</strong> Ahmad will be giving a talk on "Uncertainty-Aware Explainable AI for Medical Imaging" at the <a
+                    href="https://www.fsu.edu/" target="_blank">School of information, Florida State University</a>, US.
+            </li>
+
+            <li><strong>Mar. 2025:</strong> Ahmad will be giving a talk on "Trustworthy AI in Orthopedic Imaging", and I will be exploring collaboration at <a
+                    href="https://www.abdn.ac.uk/events/22131/" target="_blank">University of Aberdeen</a>, Scotland.
+            </li>
+
+             <li><strong>Feb. 2025:</strong> We are organizing <a
+                    href="https://www.pittaihealthcareresearchsymposium.org/" target="_blank">Pitt AI in Healthcare  Research Symposium</a>, US. Please join us!
+            </li>
+
+            <li><strong>Feb. 2025:</strong> Ahmad is serving as a PC member at <a
+                    href="https://clpsych.org/" target="_blank">Workshop on Computational Linguistics and Clinical Psychology</a>, US.
+            </li>
+
+            <li><strong>Feb. 2025:</strong> We are honored to provide research mentoring services to three very talented students at <a
+                    href="https://airesponsibly.net/RAIforUkraine/" target="_blank">RAI for Ukraine at NYU</a>, US.
+             
+           
+
+            <li><strong>Feb. 2025:</strong> Our fair and explainable ML on cancer survival analysis is now out at <a
+                    href="https://www.sciencedirect.com/science/article/abs/pii/S1386505625000395" target="_blank">International Journal of Medical Informatics</a>.
+            </li>
+
+            <li><strong>Jan. 2025:</strong> Our grant application (I am serving as the PI) on AI for Sarcoma was officially funded by <a
+                    href="https://www.pittsburghcuresarcoma.org/" target="_blank">Pittsburgh Cure Sarcoma</a>, US.
+
+            <li><strong>Jan. 2025:</strong> Ahmad is serving in the Organization Committee of <a
+                    href="https://conferences.computer.org/chase2025/workshop_ref_ai.html" target="_blank">REF-AI for Medical Imaging Informatics Workshop</a>, US.
+            
+            <li><strong>Jan. 2025:</strong> I am serving as the Tutorial Chair(s) at <a
+                    href="https://events.dimes.unical.it/ichi2025/" target="_blank">IEEE ICHI 2025</a>, Italy.
+            </li>
+                            </ul>
+-->
+                            <!--<li><strong>Mar. 2022:</strong> Nick Littlefield got a summer internship position at Mayo Clinic. Congrats, Nick!</li> -->
+    <!--
+                        </div>
+
+                    </div>
+
+                    <details>
+                        <summary> Click here to see more news from 2022-2024!
+                            <div class="section-title">
+                                <h3>2022-2024</h3>
+                            </div>
+                        </summary>
+
+                        <ul class="news-ul">
+
+                            <li><strong>Oct. 2024:</strong> Ahmad is serving as the Tutorial Chair(s) at <a
+                    href="https://events.dimes.unical.it/ichi2025/" target="_blank">IEEE ICHI 2025</a>.
+                                </li>
+
+                                 <li><strong>Sep. 2024:</strong> Ahmad will give a talk on AI Explainability in Healthcare at the <a
+                                  href="https://www.wphima.org/" target="_blank">WPHIMA</a>. You may want to register <a
+                                  href="https://www.elearningconnex.com/courses/wphima-introduction-to-explainable-ai-and-its-application-in-healthcare/" target="_blank">here</a>! 
+                                  </li>
+
+
+                            <li><strong>Sep. 2024:</strong> Ahmad is giving a talk at the <a
+                            href="https://www.airmeet.com/e/99f49e20-27f9-11ef-82cf-15ca50acf45f" target="_blank">CCC Conference</a> organized by OHRP within the U.S. Department of Health and Human Services.
+                            </li>
+                                
+
+                               <li><strong>Sep. 2024:</strong> Our Generative AI in Orthopedics paper has been published by 
+                                   <a href="https://academic.oup.com/jamia/article-abstract/31/11/2668/7765642" target="_blank">JAMIA</a>. 
+                               </li> 
+
+                                <li><strong>Aug. 2024:</strong> Our Knee ROM paper has been published at the
+                                    <a href="https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2388-0812"
+                                       target="_blank"> Journal of Knee Surgery</a>.
+                                </li>
+                                <li><strong>Aug. 2024:</strong> Ahmad has been appointed to the Journals and
+                                    Publications Committee for the 2024-2025 term at <a
+                                            href="https://amia.org/about-amia/leadership-and-governance/committees/journals-and-publications-committee"
+                                            target="_blank">AMIA</a>.
+                                </li>
+                                <li><strong>Jul. 2024:</strong> Our Nature-Scientific Reports paper on <a
+                                        href="https://www.nature.com/articles/s41598-024-66873-6" target="_blank">Fair
+                                    AI-powered orthopedic image segmentation</a> is out now.
+                                </li>
+                                <li><strong>Jun. 2024:</strong> We are organzing <a
+                                        href="https://pitthexai.github.io/AISummerSchool" target="_blank">AI Summer
+                                    School in Medical Imaging Informatics</a>.
+                                </li>
+                                <li><strong>May. 2024:</strong> We got two papers accepted at <a
+                                        href="https://conferences.miccai.org/2024/en/" target="_blank">MICCAI 2024</a>.
+                                </li>
+                                <li><strong>Feb. 2024: </strong> Serving as a session chair of "Advances in Image
+                                    Classification" at
+                                    <a href="https://amia.org/education-events/amia-2024-informatics-summit"
+                                       target="_blank">AMIA 2024 Informatics Summit</a>.
+                                </li>
+                                <li><strong>Jan. 2024: </strong> Serving as a PC member at
+                                    <a href="https://aime24.aimedicine.info/" target="_blank">AIME 2024</a>,
+                                    hosted by the University of Utah.
+                                </li>
+                            <li><strong>Dec. 2023: </strong> Have a podium abstract accepted at <a
+                                    href="https://amia.org/education-events/amia-2024-informatics-summit"
+                                    target="_blank">AMIA 2024 Informatics Summit</a>.
+                            </li>
+                            <li><strong>Nov. 2023: </strong> Zoe Menezes and Avani Chhabra are now at <a
+                                    href="https://www.shrs.pitt.edu/news/health-informatics-students-present-paper-ieee-embs-international-conference"
+                                    target="_blank">SHRS Blog</a>.
+                            </li>
+                            <li><strong>Oct. 2023: </strong> Our HexAI-TJAtxt paper/dataset is now published at
+                                <a
+                                        href="https://www.sciencedirect.com/science/article/pii/S2352340923008077"
+                                        target="_blank">Data in
+                                    Brief</a>.
+                            </li>
+                            <li><strong>Sep. 2023: </strong> Serving as a Program Committee member at <a
+                                    href="https://amia.org/education-events/amia-2024-informatics-summit"
+                                    target="_blank">AMIA 2024 Informatics Summit</a>.
+                            </li>
+                            <li><strong>Sep. 2023: </strong> We were awarded <a
+                                    href="https://blogs.oracle.com/research/post/and-the-winner-of-the-oracle-eureka-award-2023-is"
+                                    target="_blank">Oracle Excellence Eureka Award 2023</a>.
+                            </li>
+                            <li><strong>Sep. 2023: </strong> Serving as the Industry Track Chair at <a
+                                    href="https://ieeeichi2024.github.io/committees.html" target="_blank">IEEE
+                                ICHI
+                                2024</a>.
+                            </li>
+                            <li><strong>Jul. 2023: </strong> Have a work accepted at <a
+                                    href="https://bhi.embs.org/2023/"
+                                    target="_blank">IEEE BHI 2023</a>.
+                            </li>
+                            <li><strong>Jul. 2023: </strong> Have a work accepted at <a
+                                    href="https://amia.org/education-events/amia-2023-annual-symposium"
+                                    target="_blank">AMIA Annual
+                                Symposium 2023</a>.
+                            </li>
+                            <li><strong>Jun. 2023: </strong> Our <a href="https://pittnail.github.io/EBAIC/"
+                                                                    target="_blank">EBAIC
+                                2023</a> GitHub repository is now publicly and freely available at <a
+                                    href="https://github.com/pitthexai/ICHI2023_EBAIC" target="_blank">here</a>!
+                            </li>
+                            <li><strong>Jun. 2023: </strong> Pitt HexAI is organizing a free <a
+                                    href="https://events.vtools.ieee.org/m/362022" target="_blank">Mini Summer
+                                Camp
+                                in AI</a>. Target
+                                audiences are High School Students (grades 11 &12).
+                            </li>
+                            <li><strong>Jun. 2023: </strong> Ahmad P. Tafti has been invited as a keynote
+                                speaker
+                                and panelist at
+                                <a href="https://www.cmu.edu/ethics-ai/agenda/index.html" target="_blank">CMU-
+                                    K&L
+                                    Gates Conference
+                                    in Ethics and AI</a>, organized by the <a href="https://www.cmu.edu"
+                                                                              target="_blank">Carnegie
+                                    Mellon University</a>. Join us, please!
+                            </li>
+                            <li><strong>Apr. 2023: </strong> Ahmad P. Tafti has been invited as a keynote
+                                speaker at
+                                <a
+                                        href="https://www.orthonet.pitt.edu/event/orthopaedic-surgery-research-retreat"
+                                        target="_blank">Pitt's Orthopaedic Surgery Research Retreat</a>. Please,
+                                join us!
+                            </li>
+                            <li><strong>Apr. 2023: </strong> Ahmad P. Tafti has been invited as a keynote
+                                speaker at
+                                <a
+                                        href="https://sites.google.com/view/rainscmu" target="_blank">Responsible
+                                    AI
+                                    in the Natural
+                                    Sciences</a>, organized by the <a href="https://www.cmu.edu"
+                                                                      target="_blank">Carnegie
+                                    Mellon
+                                    University</a>. Join us, please!
+                            </li>
+                            <li><strong>Apr. 2023: </strong> Have two more works accepted at <a
+                                    href="https://ieeeichi.github.io/ICHI2023/" target="_blank">IEEE ICHI
+                                2023</a>.
+                                Kudos to Nick,
+                                Tina, Isameel, Avani, Zoe, and Annie!
+                            </li>
+                            <li><strong>Mar. 2023: </strong> Pitt HexAI has sumbitted two podium abstracts at <a
+                                    href="https://amia.org/education-events/amia-2023-annual-symposium"
+                                    target="_blank">AMIA 2023
+                                Annual Symposium</a>. Kudos to Nick and Tina!
+                            </li>
+                            <li><strong>Mar. 2023: </strong> Our work on explainable deep few-shot learning has
+                                been
+                                accepted as a
+                                full-paper at <a href="https://ieeeichi.github.io/ICHI2023/" target="_blank">IEEE
+                                    ICHI 2023</a>.
+                                Kudos to Nick!
+                            </li>
+                            <li><strong>Mar. 2023: </strong> We are delighted and honored to have Prof. <a
+                                    href="https://www.orthonet.pitt.edu/people/ines-lohse-phd" target="_blank">Ines
+                                Lohse, PhD</a>
+                                join us as our Associate Director. Welcome, Ines!
+                            </li>
+                            <li><strong>Mar. 2023: </strong> Our lab has started launching <a
+                                    href="https://podcasters.spotify.com/pod/show/hexailab" target="_blank">Health
+                                and Explainable AI
+                                Podcast</a> series.
+                            </li>
+                            <li><strong>Feb. 2023: </strong> Our lab is happy to participate at the <a
+                                    href="https://web.cvent.com/event/8071b458-dcec-406d-9a52-5100e0e1ba4c/summary"
+                                    target="_blank">3rd Annual Deep Learning Workshop presented by The OSCT at
+                                Marquette
+                                University</a>.
+                            </li>
+                            <li><strong>Feb. 2023: </strong> Annie's work on primary total shoulder arthroplasty
+                                has
+                                been accepted
+                                at <a href="https://medinfo2023.org/" target="_blank">MedInfo 2023</a>. Thank
+                                you,
+                                Annie!
+                            </li>
+                            <li><strong>Jan. 2023: </strong> We were awarded <a
+                                    href="https://www.oracle.com/research"
+                                    target="_blank">Oracle for Research Award</a>. Thank you, Oracle!
+                            </li>
+                            <li><strong>Jan. 2023: </strong> We were awarded <a href="https://ctsi.pitt.edu"
+                                                                                target="_blank">University of
+                                Pittsburgh CTSI Award</a>. Thank you, Pitt CTSI!
+                            </li>
+                            <li><strong>Jan. 2023: </strong> Have an accepted workshop on Ethics and Bias of AI
+                                in
+                                Clinical
+                                Applications at <a href="https://ieeeichi.github.io/ICHI2023" target="_blank">IEEE
+                                    ICHI 2023</a>.
+                            </li>
+                            <li><strong>Nov. 2022: </strong> We've sumbitted a student abstract/poster at <a
+                                    href="https://medinfo2023.org" target="_blank">MedInfo 2023</a>.
+                            </li>
+                            <li><strong>Sep. 2022: </strong> We've sumbitted an abstract at <a
+                                    href="https://amia.org/education-events/amia-2023-informatics-summit"
+                                    target="_blank">AMIA 2023
+                                Informatics Summit</a>.
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Team Section -->
+
+
+</main><!-- End #main -->
+-->
+
+
+<script>
+(function(){
+  function openNewsIfNeeded(){
+    if (location.hash === '#news') {
+      var btn = document.getElementById('see-all-news');
+      if (btn) btn.click();
+      var sec = document.getElementById('news');
+      if (sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+  openNewsIfNeeded();
+  window.addEventListener('hashchange', openNewsIfNeeded);
+})();
+</script>
+
+
+
+    
+<!-- ======= Services Section ======= -->
+<section id="partners" class="services">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h3>Supports | Partners | Collaborators </h3>
+        </div>
+        <div class="row m-3">
+            <!-- <center><img src="assets/img/PittHexAI_Support.png" class="rounded fetch-img" alt="Supports"
+                style="max-width:780px"> </center> -->
+            
+            <div class="col"><a href="https://www.pittsburghcuresarcoma.org/" target="_blank">
+                <img src="assets/img/Partners/pcs.png" alt="Pittsburgh Cure Sarcoma"
+                     class="partners-img">
+            </a></div>
+            
+
+            <div class="col"><a href="https://www.oracle.com/research/" target="_blank">
+                <img src="assets/img/Partners/Oracle_for_Research_Logo.jpg" alt="Oracle for Research"
+                     class="partners-img">
+            </a></div>
+
+
+            <div class="col"><a href="https://www.path.pitt.edu/divisions/computational-pathology-informatics/computational-pathology-ai-center-excellence" target="_blank">
+                <img src="assets/img/Partners/cpace.png" alt="Computational Pathology & AI Center of Excellence (CPACE)"
+                     class="partners-img">
+            </a></div>
+
+            
+            <div class="col"><a href="https://ctsi.pitt.edu/" target="_blank">
+                <img src="assets/img/Partners/pittctsi_2colorprimary-logo.png"
+                     alt="Clinical and Translational Science Institute" class="partners-img">
+            </a></div>
+            
+
+        </div>
+    </div>
+</section>
+
+<!-- ======= Awards Section ======= -->
+<section id="awards" class="awards section-bg ">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h3>Awards</h3>
+        </div>
+        <div class="row m-5 ">
+            <div class="col-6 awards-col-part">
+                <div class="awards-img"><a href="https://www.oracle.com/cloud/excellence-awards/" target="_blank">
+                    <img src="assets/img/Awards/Oracle_ResearchAward2023.png" alt="2023 Oracle Excellents Awards">
+                </div>
+                
+                </a>
+            </div>
+            <div class="col-6 awards-col-part">
+                <div class="awards-img"><a href="https://siim.org/award/the-imaging-informatics-innovator-award/"
+                                           target="_blank">
+                    <img src="assets/img/Awards/SIIM_Awards2021.png" alt="The Imaging Informatics Innovator Award">
+                </div>
+                
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+    <div class="footer-newsletter" style="padding: 10px 0;"></div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 footer-contact">
+                    <img src="assets/img/Pitthexai_logo.png" class="rounded footer-img">
+                </div>
+
+                <div class="col-md-4 footer-links">
+                    <h4>Address</h4>
+                    <p>University of Pittsburgh<br>
+                        School of Health and Rehabilitation Sciences<br>
+                        Department of Health Informatics<br>
+                        6030 Forbes Tower<br>
+                        Pittsburgh, PA 15260</p>
+                </div>
+
+                <div class="col-md-4 footer-links">
+                    <h4>Contact</h4>
+                    <p>Email: tafti[dot]ahmad[at]pitt.edu<br></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Pitt Health + Explainable AI (Pitt HexAI) Research
+            Laboratory</span></strong>.
+            All Rights Reserved
+        </div>
+        <div class="credits">
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+
+
+<!-- ===== News Slider Script (fixed: parse month/year from text) ===== -->
+<script>
+(function () {
+  const archiveEl = document.getElementById('news-archive');
+  const swiperEl  = document.getElementById('news-swiper');
+  const seeAllBtn = document.getElementById('see-all-news');
+  if (!archiveEl || !swiperEl || !seeAllBtn) return;
+
+  function monthKey(d){ 
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); 
+  }
+  function monthLabel(d){ 
+    return d.toLocaleString('en-US', { month: 'long', year: 'numeric' }); 
+  }
+
+  // Extract "Oct. 2025" / "October 2025" from each <li>
+  function extractDateFromText(li) {
+    const txt = (li.textContent || '').trim();
+    const m = txt.match(/\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(\d{4})/i);
+    if (!m) return null;
+
+    const map = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
+    const mon3 = m[1].slice(0, 3).toLowerCase();
+    const y = parseInt(m[2], 10);
+    const mm = map[mon3];
+    if (mm == null || isNaN(y)) return null;
+
+    return new Date(y, mm, 1); // month/year only
+  }
+
+  const now = new Date();
+  const lastMonths = [];
+  for (let i = 0; i < 4; i++) {
+    lastMonths.push(monthKey(new Date(now.getFullYear(), now.getMonth() - i, 1)));
+  }
+
+  const items = Array.from(archiveEl.querySelectorAll('li'))
+    .map(li => {
+      const ds = li.getAttribute('data-date');
+      const d = ds ? new Date(ds) : extractDateFromText(li);
+      return { li, date: d, key: d ? monthKey(d) : null };
+    })
+    .filter(x => x.date instanceof Date && !isNaN(x.date));
+
+  const grouped = Object.fromEntries(lastMonths.map(k => [k, []]));
+  items.forEach(x => { 
+    if (grouped.hasOwnProperty(x.key)) grouped[x.key].push(x); 
+  });
+
+  const wrapper = swiperEl.querySelector('.swiper-wrapper');
+  if (!wrapper) return;
+
+  // Prevent duplicates if something re-runs
+  wrapper.innerHTML = '';
+
+  lastMonths.forEach((k, idx) => {
+    const monthDate = new Date(now.getFullYear(), now.getMonth() - idx, 1);
+
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+
+    const card = document.createElement('div');
+    card.className = 'news-card';
+
+    const title = document.createElement('div');
+    title.className = 'news-month-title';
+    title.textContent = monthLabel(monthDate);
+    card.appendChild(title);
+
+    const monthItems = (grouped[k] || []).sort((a, b) => b.date - a.date);
+
+    if (monthItems.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'text-muted';
+      empty.textContent = 'No news posted this month.';
+      card.appendChild(empty);
+    } else {
+      monthItems.forEach(({ li }) => {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.innerHTML = li.innerHTML;
+        card.appendChild(div);
+      });
+    }
+
+    slide.appendChild(card);
+    wrapper.appendChild(slide);
+  });
+
+  seeAllBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    const isHidden = archiveEl.style.display === 'none' || archiveEl.style.display === '';
+    archiveEl.style.display = isHidden ? 'block' : 'none';
+    this.textContent = isHidden ? 'Hide all News' : 'See all News';
+  });
+
+  new Swiper('#news-swiper', {
+    loop: true,
+    autoplay: { delay: 8000, disableOnInteraction: false },
+    speed: 1600,  
+    pagination: { el: '#news-swiper .swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '#news-swiper .swiper-button-next',
+      prevEl: '#news-swiper .swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 16
+  });
+})();
+</script>
+<!-- ===== End News Slider Script ===== -->
+
+
+<!-- ===== News Slider Script (fixed: parse month/year from text) ===== -->
+
+    
+<script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
+<script>
+const ALLOWED_PAGES = {
+  'index.html': 'Home',
+  'people.html': 'Team',
+  'research.html': 'Research Projects',
+  'podcast.html': 'HexAI Podcast',
+  'publications.html': 'Publications',
+  'githubrepo.html': 'GitHub',
+  'events.html': 'AI Summer School'
+};
+
+const EXTERNAL_TARGETS = {
+  'githubrepo.html': 'https://github.com/pitthexai/',
+  'publications.html': 'https://scholar.google.com/citations?user=NxeXUqwAAAAJ&hl=en',
+  'events.html': 'https://pitthexai.github.io/AISummerSchool/'
+};
+
+function baseDir() {
+  return location.origin + location.pathname.replace(/[^/]+$/, '');
+}
+
+function filenameFromUrl(url) {
+  try {
+    return new URL(url).pathname.split('/').pop() || '';
+  } catch {
+    return '';
+  }
+}
+
+function isAllowedUrl(url) {
+  const fn = filenameFromUrl(url);
+  return !!ALLOWED_PAGES[fn];
+}
+
+function prettyPageLabel(url) {
+  const fn = filenameFromUrl(url);
+  return ALLOWED_PAGES[fn] || fn || url;
+}
+
+function discoverLinks() {
+  const base = baseDir();
+  return Array.from(document.querySelectorAll('a[href$=".html"]'))
+    .map(a => a.getAttribute('href'))
+    .filter(Boolean)
+    .map(h => h.startsWith('http') ? h : (h.startsWith('/') ? location.origin + h : base + h));
+}
+
+const seedPages = Object.keys(ALLOWED_PAGES).map(p => location.origin + '/' + p);
+
+const PAGES = Array.from(new Set([
+  ...seedPages,
+  ...discoverLinks()
+]))
+.filter(u => new URL(u).origin === location.origin)
+.filter(isAllowedUrl);
+
+let lunrIdx = null;
+let PAGE_DB  = {};
+
+function normalizeText(s) {
+  return (s || '').replace(/\s+/g, ' ').trim();
+}
+
+// کل متن صفحه (اختیاری: حذف news)
+function extractMainText(doc, { removeNews = false } = {}) {
+  const clone = doc.cloneNode(true);
+  clone.querySelectorAll('script,style,noscript').forEach(el => el.remove());
+
+  if (removeNews) {
+    const news = clone.querySelector('#news');
+    if (news) news.remove();
+  }
+
+  const main = clone.querySelector('#main') || clone.body || clone;
+  return normalizeText(main.textContent || '');
+}
+
+// فقط متن یک node مثل #news
+function extractTextFromNode(node) {
+  if (!node) return '';
+  const clone = node.cloneNode(true);
+  clone.querySelectorAll('script,style,noscript').forEach(el => el.remove());
+  return normalizeText(clone.textContent || '');
+}
+
+function makeSnippet(text, from, to, after = 50) {
+  const start = from;
+  const end   = Math.min(text.length, to + after);
+  const suffix = end < text.length ? ' …' : '';
+  return text.slice(start, end) + suffix;
+}
+
+function pickFragment(text, from, to) {
+  return text.slice(from, to).trim().slice(0, 80);
+}
+
+async function buildIndex() {
+  const docs = [];
+
+  for (const url of PAGES) {
+    try {
+      const res = await fetch(url, { cache: 'no-cache' });
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+
+      const fn = filenameFromUrl(url);
+      const baseTitle =
+        (doc.querySelector('title')?.textContent || prettyPageLabel(url)).trim();
+
+      // ===== special case: index.html -> دو رکورد جدا (Home و News) =====
+      if (fn === 'index.html') {
+        const homeContent = extractMainText(doc, { removeNews: true });
+        const newsContent = extractTextFromNode(doc.querySelector('#news'));
+
+        const recHome = {
+          url: location.origin + '/index.html#home',
+          title: baseTitle,
+          content: homeContent,
+          pageLabel: 'Home'
+        };
+
+        const recNews = {
+          url: location.origin + '/index.html#news',
+          title: baseTitle + ' — News',
+          content: newsContent,
+          pageLabel: 'Home / News'
+        };
+
+        PAGE_DB[recHome.url] = recHome;
+        docs.push(recHome);
+
+        if (newsContent) {
+          PAGE_DB[recNews.url] = recNews;
+          docs.push(recNews);
+        }
+      }
+
+      // ===== سایر صفحات =====
+      else {
+        const content = extractMainText(doc);
+        const pageLabel = prettyPageLabel(url);
+
+        const rec = { url, title: baseTitle, content, pageLabel };
+        PAGE_DB[url] = rec;
+        docs.push(rec);
+      }
+
+    } catch (_) {}
+  }
+
+  lunrIdx = lunr(function () {
+    this.ref('url');
+    this.field('title',  { boost: 5 });
+    this.field('content');
+    this.metadataWhitelist = ['position'];
+    docs.forEach(d => this.add(d));
+  });
+}
+
+async function ensureIndex() {
+  if (!lunrIdx) await buildIndex();
+}
+
+function renderResults(hits, query) {
+  const box = document.getElementById('search-results');
+  if (!box) return;
+
+  if (!hits.length) {
+    box.innerHTML = '<div class="alert alert-warning py-2 mb-0">No results found.</div>';
+    box.classList.remove('d-none');
+    return;
+  }
+
+  const cards = hits.map(hit => {
+    const rec = PAGE_DB[hit.ref];
+    if (!rec) return '';
+
+    const md = hit.matchData.metadata;
+    const positions = [];
+    Object.keys(md).forEach(term => {
+      const posList = md[term]?.content?.position || md[term]?.title?.position || [];
+      posList.forEach(p => positions.push(p));
+    });
+    positions.sort((a,b) => a[0] - b[0]);
+    const unique = positions.slice(0, 3);
+
+    const items = unique.map(p => {
+      const from = p[0], to = p[0] + p[1];
+      const snippet = makeSnippet(rec.content, from, to);
+      const fragmentText = pickFragment(rec.content, from, to);
+
+      const fn = filenameFromUrl(rec.url);
+
+      const isHomeNews = rec.url.includes('index.html#news');
+      const isHomeMain = rec.url.includes('index.html#home');
+
+      let link;
+      let targetAttr = '';
+
+      // صفحات خارجی
+      if (EXTERNAL_TARGETS[fn]) {
+        link = EXTERNAL_TARGETS[fn];
+        targetAttr = ' target="_blank" rel="noopener"';
+      }
+      // نتیجه از News (داخل home)
+      else if (isHomeNews) {
+        link = location.origin + '/index.html#news';
+      }
+      // نتیجه از Home (بدون news) -> highlight متن
+      else if (isHomeMain) {
+        link = location.origin + '/index.html#:~:text=' + encodeURIComponent(fragmentText);
+      }
+      // سایر صفحات داخلی -> highlight متن
+      else {
+        link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
+      }
+
+      return `
+        <div class="small mb-2">
+          <a href="${link}"${targetAttr}>${rec.title}</a>
+          <div class="text-muted">${rec.pageLabel}</div>
+          <div>${snippet.replace(/</g,'&lt;')}</div>
+        </div>`;
+    }).join('');
+
+    return items || `
+      <div class="small mb-2">
+        <a href="${rec.url}">${rec.title}</a>
+        <div class="text-muted">${rec.pageLabel}</div>
+        <div>${(rec.content || '').slice(0, 180)}…</div>
+      </div>`;
+  }).join('');
+
+  box.innerHTML = `
+    <div class="card">
+      <div class="card-body py-3">
+        <div class="mb-2"><strong>Results for:</strong> ${query.replace(/</g,'&lt;')}</div>
+        ${cards}
+      </div>
+    </div>`;
+  box.classList.remove('d-none');
+
+  const bar = document.getElementById('site-searchbar');
+  if (bar && bar.classList.contains('collapse')) bar.classList.add('show');
+}
+
+document.getElementById('site-search-form')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const q = document.getElementById('site-search-input')?.value.trim();
+  if (!q) return;
+
+  await ensureIndex();
+  const results = lunrIdx.search(q);
+  renderResults(results, q);
+});
+</script>
+
+
+
+  
+  <script src="assets/js/main.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    const pageMap = {
+      "": "index",
+      "index.html": "index",
+      "research.html": "research",
+      "podcast.html": "podcast",
+      "people.html": "people"
+    };
+
+    const activePage = pageMap[currentPage];
+
+    document.querySelectorAll("#navbar a[data-page]").forEach(link => {
+      link.classList.remove("active");
+
+      if (link.dataset.page === activePage) {
+        link.classList.add("active");
+      }
+    });
+  });
+  </script>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
