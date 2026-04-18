@@ -231,7 +231,8 @@
 
                 <div class="swiper-slide">
                     <div class="testimonial-item mt-3">
-                        <h2>Making Healthcare Better Through the Power of Explainable AI</h2>
+                        <!--<h2>Making Healthcare Better Through the Power of Explainable AI</h2>-->
+                        <h2>Advancing Musculoskeletal Care with Explainable AI</h2>
                     </div>
                 </div><!-- End testimonial item -->
 
