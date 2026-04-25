@@ -1986,19 +1986,26 @@ section {
 }
 
 /* ===== Style for the 'See all News' link ===== */
-#see-all-news {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 1.25rem;     
-  font-weight: 600;       
-  color: #0d6efd;         
-  text-decoration: none;
-  transition: color 0.3s ease;
+.news-top-link {
+  text-align: left;
 }
 
-#see-all-news:hover {
-  color: #084298;          
-  text-decoration: underline;
+.see-all-news-btn {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d6efd;
+  background: #ffffff;
+  border: 1px solid #d9e7ff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.08);
+}
+
+.see-all-news-btn:hover {
+  text-decoration: none;
+  background: #f3f8ff;
+  color: #084298;
 }
 
 
