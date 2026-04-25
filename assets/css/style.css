@@ -2160,7 +2160,10 @@ a, p, li { word-break: break-word; }
 
 
 
-
+.content-block {
+  margin-left: 60px;
+  margin-right: 60px;
+}
 
 
 
