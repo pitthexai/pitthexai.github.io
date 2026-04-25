@@ -467,12 +467,20 @@
       <h3>Recent News</h3>
     </div>
 
-
+    <div class="news-top-link mb-3">
+        <a id="see-all-news" href="#" class="see-all-news-btn">
+            See all News 2022 – 2026
+        </a>
+    </div>
       
     <div class="row justify-content-center mt-4">
       <div class="col-xl-10">
 
-        <!-- Slider wrapper -->
+          
+
+          
+          
+          <!-- Slider wrapper -->
         <div id="news-swiper" class="swiper news-swiper">
             <div class="swiper-wrapper">
             </div>
@@ -483,9 +491,9 @@
         </div>
 
        
-        <div class="text-right mt-2">
-          <a id="see-all-news" href="#" class="btn btn-link p-0">See all News 2022 – 2025</a>
-        </div>
+       <!-- <div class="text-right mt-2">
+          <a id="see-all-news" href="#" class="btn btn-link p-0">See all News 2022 – 2026</a>
+        </div> -->
 
         <!-- Full archive (hidden by default) -->
         <ul id="news-archive" class="news-ul" style="display:none">
@@ -1363,7 +1371,7 @@
     e.preventDefault();
     const isHidden = archiveEl.style.display === 'none' || archiveEl.style.display === '';
     archiveEl.style.display = isHidden ? 'block' : 'none';
-    this.textContent = isHidden ? 'Hide all News' : 'See all News';
+    this.textContent = isHidden ? 'Hide all News 2022 – 2026' : 'See all News';
   });
 
   new Swiper('#news-swiper', {
@@ -1450,7 +1458,6 @@ function normalizeText(s) {
   return (s || '').replace(/\s+/g, ' ').trim();
 }
 
-// کل متن صفحه (اختیاری: حذف news)
 function extractMainText(doc, { removeNews = false } = {}) {
   const clone = doc.cloneNode(true);
   clone.querySelectorAll('script,style,noscript').forEach(el => el.remove());
@@ -1464,7 +1471,6 @@ function extractMainText(doc, { removeNews = false } = {}) {
   return normalizeText(main.textContent || '');
 }
 
-// فقط متن یک node مثل #news
 function extractTextFromNode(node) {
   if (!node) return '';
   const clone = node.cloneNode(true);
@@ -1496,7 +1502,6 @@ async function buildIndex() {
       const baseTitle =
         (doc.querySelector('title')?.textContent || prettyPageLabel(url)).trim();
 
-      // ===== special case: index.html -> دو رکورد جدا (Home و News) =====
       if (fn === 'index.html') {
         const homeContent = extractMainText(doc, { removeNews: true });
         const newsContent = extractTextFromNode(doc.querySelector('#news'));
@@ -1524,7 +1529,6 @@ async function buildIndex() {
         }
       }
 
-      // ===== سایر صفحات =====
       else {
         const content = extractMainText(doc);
         const pageLabel = prettyPageLabel(url);
@@ -1586,20 +1590,16 @@ function renderResults(hits, query) {
       let link;
       let targetAttr = '';
 
-      // صفحات خارجی
       if (EXTERNAL_TARGETS[fn]) {
         link = EXTERNAL_TARGETS[fn];
         targetAttr = ' target="_blank" rel="noopener"';
       }
-      // نتیجه از News (داخل home)
       else if (isHomeNews) {
         link = location.origin + '/index.html#news';
       }
-      // نتیجه از Home (بدون news) -> highlight متن
       else if (isHomeMain) {
         link = location.origin + '/index.html#:~:text=' + encodeURIComponent(fragmentText);
       }
-      // سایر صفحات داخلی -> highlight متن
       else {
         link = rec.url + '#:~:text=' + encodeURIComponent(fragmentText);
       }
