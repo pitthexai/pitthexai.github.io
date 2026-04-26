@@ -2185,25 +2185,25 @@ a, p, li { word-break: break-word; }
   justify-content: center;
   align-items: flex-end;
   flex-wrap: nowrap;
-  min-height: 300px;
-  margin-bottom: 50px;
+  min-height: 420px;
+  margin-bottom: 60px;
   padding: 20px 0;
 }
 
-/* paper cards */
+/* paper cards (BIG SIZE) */
 .hanging-paper {
-  width: 175px;
-  height: 245px;
-  margin-left: -40px;   /* overlap effect */
+  width: 260px;
+  height: 360px;
+  margin-left: -70px;   /* overlap effect */
   position: relative;
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 18px 45px rgba(0,0,0,0.18);
   transform: rotate(var(--angle));
   transition: all 0.35s ease;
   text-decoration: none;
   color: #333;
-  padding: 8px;
+  padding: 10px;
   z-index: 1;
   overflow: hidden;
 }
@@ -2213,26 +2213,26 @@ a, p, li { word-break: break-word; }
   margin-left: 0;
 }
 
-/* random natural rotations */
-.hanging-paper:nth-child(1) { --angle: -5deg; }
+/* natural slight rotations */
+.hanging-paper:nth-child(1) { --angle: -4deg; }
 .hanging-paper:nth-child(2) { --angle: 3deg; }
 .hanging-paper:nth-child(3) { --angle: -2deg; }
 .hanging-paper:nth-child(4) { --angle: 2deg; }
 .hanging-paper:nth-child(5) { --angle: -3deg; }
 .hanging-paper:nth-child(6) { --angle: 4deg; }
-.hanging-paper:nth-child(7) { --angle: -4deg; }
+.hanging-paper:nth-child(7) { --angle: -2deg; }
 
-/* hover effect (professional lift) */
+/* hover (STRONG zoom for readability) */
 .hanging-paper:hover {
-  transform: translateY(-50px) scale(1.18) rotate(0deg);
-  z-index: 20;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.28);
+  transform: translateY(-70px) scale(1.4) rotate(0deg);
+  z-index: 30;
+  box-shadow: 0 35px 80px rgba(0,0,0,0.3);
 }
 
-/* image */
+/* image (BIG) */
 .hanging-paper img {
   width: 100%;
-  height: 205px;
+  height: 300px;
   object-fit: contain;
   background: #fff;
   display: block;
@@ -2240,31 +2240,36 @@ a, p, li { word-break: break-word; }
 
 /* caption */
 .paper-caption {
-  font-size: 11px;
-  line-height: 1.25;
+  font-size: 13px;
+  line-height: 1.3;
   text-align: center;
-  padding-top: 7px;
-  color: #444;
+  padding-top: 8px;
+  color: #333;
+  font-weight: 500;
 }
 
-/* responsive */
+/* ================= MOBILE & TABLET ================= */
+
+/* tablet */
 @media (max-width: 992px) {
   .paper-line {
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 30px;
+    min-height: auto;
   }
 
   .hanging-paper {
     margin-left: 0;
     width: 220px;
-    height: 300px;
+    height: 310px;
   }
 
   .hanging-paper img {
-    height: 240px;
+    height: 250px;
   }
 }
 
+/* mobile */
 @media (max-width: 576px) {
   .paper-line {
     justify-content: center;
