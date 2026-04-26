@@ -1375,6 +1375,8 @@
     e.preventDefault();
     const isHidden = archiveEl.style.display === 'none' || archiveEl.style.display === '';
     archiveEl.style.display = isHidden ? 'block' : 'none';
+    swiperEl.style.display = isHidden ? 'none' : 'block';
+      
     this.textContent = isHidden ? 'Hide all News' : 'See all News 2022 – 2026';
   });
 
