@@ -2256,12 +2256,12 @@ a, p, li { word-break: break-word; }
 
   .hanging-paper {
     margin-left: 0;
-    width: 145px;
-    height: 210px;
+    width: 220px;
+    height: 300px;
   }
 
   .hanging-paper img {
-    height: 170px;
+    height: 240px;
   }
 }
 
@@ -2272,11 +2272,11 @@ a, p, li { word-break: break-word; }
   }
 
   .hanging-paper {
-    width: 130px;
-    height: 190px;
+    width: 180px;
+    height: 260px;
   }
 
   .hanging-paper img {
-    height: 150px;
+    height: 200px;
   }
 }
