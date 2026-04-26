@@ -1288,6 +1288,8 @@
   const archiveEl = document.getElementById('news-archive');
   const swiperEl  = document.getElementById('news-swiper');
   const seeAllBtn = document.getElementById('see-all-news');
+  const newsTitle = document.querySelector('#news .section-title h3');  
+    
   if (!archiveEl || !swiperEl || !seeAllBtn) return;
 
   function monthKey(d){ 
@@ -1378,6 +1380,9 @@
     swiperEl.style.display = isHidden ? 'none' : 'block';
       
     this.textContent = isHidden ? 'Hide all News' : 'See all News 2022 – 2026';
+    if (newsTitle) {
+  newsTitle.textContent = isHidden ? 'All News 2022 – 2026' : 'Recent News';
+    }  
   });
 
   new Swiper('#news-swiper', {
