@@ -2288,3 +2288,25 @@ a, p, li { word-break: break-word; }
     height: 100%;
   }
 }
+
+
+
+
+
+
+
+.paper-year-2025 {
+  text-align: center;
+}
+
+.paper-line-2025 {
+  display: inline-flex !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  min-height: 0 !important;
+
+  background: #ffffff;
+  padding: 25px 35px !important;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+}
