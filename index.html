@@ -466,7 +466,7 @@
 
     <div class="news-top-link mb-3">
         <a id="see-all-news" href="#" class="see-all-news-btn">
-            See all News 2022 – 2026
+            See all News 2022 – 2025
         </a>
     </div>
       
@@ -500,11 +500,14 @@
         </div> -->
 
         <!-- Full archive (hidden by default) -->
-        <ul id="news-archive" class="news-ul" style="display:none">
-
+        <!-- <ul id="news-archive" class="news-ul" style="display:none"> -->
+        <div id="news-archive" class="news-ul" style="display:none">
+        <h3 class="news-year-title">News 2026</h3>
+        <ul>
 
 
             <!-- ===== 2026 ===== -->
+
 
             <li>
               <strong>April 2026:</strong>
@@ -605,10 +608,17 @@
                 </a>.
             </li>
 
-
+        
             
-          <!-- ===== 2025 ===== -->
+          
+        </ul>
+        
+        <details class="news-year-details">
+          <summary>News 2025 and Earlier</summary>
+          <ul>
+            <!-- ===== 2025 ===== -->
 
+              
             <li>
               <strong>Dec. 2025:</strong>
               Our Pitt HexAI podcast episode featuring Richard Bonneau, PhD is now available on all major podcast platforms.
@@ -893,6 +903,8 @@
           </li>
 
         </ul>
+    </details>
+    </div>
 
       </div>
     </div>
@@ -1379,7 +1391,7 @@
     archiveEl.style.display = isHidden ? 'block' : 'none';
     swiperEl.style.display = isHidden ? 'none' : 'block';
       
-    this.textContent = isHidden ? 'Hide all News' : 'See all News 2022 – 2026';
+    this.textContent = isHidden ? 'Hide all News' : 'See all News 2022 – 2025';
     if (newsTitle) {
       newsTitle.textContent = isHidden ? 'All News 2022 – 2026' : 'Recent News';
     }  
