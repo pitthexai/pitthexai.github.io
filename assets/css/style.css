@@ -2291,5 +2291,16 @@ a, p, li { word-break: break-word; }
 
 
 
+/* ============  Remove Recent News ================= */
 
+<style>
+  #news .section-title,
+  #news-swiper {
+    display: none !important;
+  }
+
+  #news-archive {
+    display: none;
+  }
+</style>
 
