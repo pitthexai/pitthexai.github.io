@@ -2298,3 +2298,20 @@ a, p, li { word-break: break-word; }
   display: none !important;
 }
 
+
+
+
+
+.news-year-details summary {
+  cursor: pointer;
+  color: #106eea;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.news-year-title {
+  color: #444;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
