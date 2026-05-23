@@ -1730,13 +1730,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".photo-slideshow .slide-img");
   let current = 0;
 
-  setInterval(function () {
+  function showNextSlide() {
     slides[current].classList.remove("active");
     current = (current + 1) % slides.length;
     slides[current].classList.add("active");
-  }, 4000);
+
+    let delay = (current === 0) ? 10000 : 6000;
+    setTimeout(showNextSlide, delay);
+  }
+
+  setTimeout(showNextSlide, 10000);
 });
-</script>   
+</script> 
 
 
     
