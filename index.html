@@ -1721,6 +1721,24 @@ document.getElementById('site-search-form')?.addEventListener('submit', async (e
     });
   });
   </script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".photo-slideshow .slide-img");
+  let current = 0;
+
+  setInterval(function () {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 4000);
+});
+</script>   
+
+
     
 </body>
 
