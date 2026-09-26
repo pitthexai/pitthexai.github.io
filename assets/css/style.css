@@ -502,8 +502,8 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 75vh;
-  background: url("../img/background_Sep_1.png") center top no-repeat;
+  height: 65vh;
+  background: url("../img/background_Sep.png") center top no-repeat;
   /*background-size: 90%;*/
   background-size: cover;
   position: relative;
